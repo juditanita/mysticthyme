@@ -10,7 +10,7 @@ function ProductCard({ img, title, price, category, description }) {
   let text = description.split(" ",10);
   description = text.join(" ");
  
-  const classNme="social-links bg-white text-pink-400 shadow-lg font-normal h-10 w-10 p-2 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+ 
 
   return (
     <>

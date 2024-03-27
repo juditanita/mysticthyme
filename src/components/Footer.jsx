@@ -46,7 +46,7 @@ function Footer() {
                 <span className="block uppercase text-gray-500 text-sm font-semibold mb-2">
                   Useful Links
                 </span>
-                <ul class="list-unstyled">
+                <ul className="list-unstyled">
                   {
                     
                     footerLink 
@@ -68,7 +68,7 @@ function Footer() {
         <hr className="my-6 border-gray-300" />
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div class="text-sm text-gray-500 font-semibold py-1">
+            <div className="text-sm text-gray-500 font-semibold py-1">
               Copyright ©{" "}
               <span id="get-current-year">{new Date().getFullYear()}</span>
               <Link

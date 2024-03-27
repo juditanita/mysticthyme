@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import BtnWithArroy from "../components/ShortComponets/BtnWithArroy";
 import Footer from "../components/Footer";
 import LogoHolder from "../components/LogoHolder";
+import SectionSign from "../components/SectionSign"
 
 
 function About() {
@@ -14,6 +15,7 @@ function About() {
         {" "}
         About us
       </h2>
+     
       <div className="flex flex-wrap about-header "></div>
       <div className=" mx-auto mt-6 pb-6 text-stretch  max-w-96 sm:w-full w-screen bg-white">
         <Paragraphs className={`pt-2 sm:pt-6 px-8`}>
@@ -34,10 +36,11 @@ function About() {
           deserunt repudiandae consectetur corrupti.
         </Paragraphs>
 
-        <div className=" flex justify-center">
+         <div className=" flex justify-center">
           {" "}
           <BtnWithArroy className={`md:hidden`}>Shop Now</BtnWithArroy>
-        </div>
+        </div> 
+        
         
       </div>
       <div className='py-10'>

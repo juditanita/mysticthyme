@@ -39,7 +39,7 @@ function Product() {
                 price={price}
                
                 />
-<div class="flex flex-wrap justify-end pe-3 mt-auto pt-3 text-xs font-light" >{singleTagEl}</div>
+<div className="flex flex-wrap justify-end pe-3 mt-auto pt-3 text-xs font-light" >{singleTagEl}</div>
                 
 
                 </div>)

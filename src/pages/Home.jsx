@@ -11,17 +11,26 @@ import Product from '../components/Product'
 import MoodBoard from '../components/MoodBoard'
 import LogoHolder from '../components/LogoHolder'
 import ContactForm from '../components/pagecomponents/ContactForm'
-import Footer from "../components/Footer"
+// import Footer from "../components/Footer"
+import SectionSign from "../components/SectionSign"
+import Separator from "../components/Separator"
+
 
 
 
 function Home() {
+  
   return (
     <>
     <main className="main container z-1">
     <Hero/>  
   
+    <div className=' w-full mt-6 pt-9 bg-white '>
+    <Separator/> 
    
+       <SectionSign/>
+      
+    </div>
    
     <AboutShort/>
    

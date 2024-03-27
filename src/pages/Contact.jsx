@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import ContactForm from "../components/pagecomponents/ContactForm";
 
 function Contact() {
@@ -8,6 +9,7 @@ function Contact() {
     <div className="flex flex-wrap contact-header ">
 
     </div>
+  
     
     <ContactForm/></div>
   );
