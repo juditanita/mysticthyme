@@ -6,14 +6,16 @@ import Paragraphs from "./Paragraphs";
 import ClearBtn from "./ClearBtn";
 
 
-function ProductCard({ img, title, price, category, description }) {
+function ProductCard(item) {
+  let { img, title, price, category, description } = item;
   let text = description.split(" ",10);
   description = text.join(" ");
  
  
+ 
 
   return (
-    <>
+    <> 
       <img className="product-img w-full" src={img} alt={`${title}  in the ${category}`} />
       <div className="px-2">
       <h3 className="mb-2  text-l uppercase my-4">

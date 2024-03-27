@@ -1,36 +1,23 @@
-import React from 'react'
+import React from "react";
 
-import Header from '../components/Header'
+import Header from "../components/Header";
 
-
-
-
-import { Outlet } from 'react-router-dom'
-import Footer from '../components/Footer'
-
-
-
-
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function LayoutCustomers() {
+
   return (
-   <>
-   
-    <header> <Header/>  </header>
-  
-  <Outlet/>
-   {/* <Footer/> */}
- 
-
-  
-  
-  
-
-  
- 
-  </>
-   
-  )
+    <>
+      <div className="sticky top-0 bg-white">
+       
+        <Header />
+      </div>
+<main className="mt-"><Outlet /></main>
+      
+      <Footer />
+    </>
+  );
 }
 
-export default LayoutCustomers
+export default LayoutCustomers;

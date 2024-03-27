@@ -116,9 +116,7 @@ z-index:-3;
     margin-inline:2rem;
   }
 }
-footer{
-  margin-top: 10vh;
-}
+
 
 @media screen and (max-width:360px){
   .about {
@@ -154,6 +152,8 @@ input:focus, textarea:focus {
   
 
   padding: 0px;
+  max-height:200px;
+  height:90%;
 
 }
 .cat-img {
@@ -169,4 +169,10 @@ input:focus, textarea:focus {
 .product-card {
  
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.opened{
+  margin-top: 40vh;
+}
+.closed{
+margin-top:10vh;
 }

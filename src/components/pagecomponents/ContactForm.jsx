@@ -10,23 +10,26 @@ function ContactForm() {
     message: "",
     subscribe: "",
   });
-  const [error,setError]=React.useState(false);
-  const errorMessage="Please fill out this field."
+  const [errorName, setErrorName] = React.useState(false);
+  const [errorEmail, setErrorEmail] = React.useState(false);
+  const [errorForMessage, setErrorForMessage] = React.useState(false);
+  const errorMessage = "Please fill out this field.";
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    if(formData.name ==="" || formData.email===""|| formData.message===""){
-      setError(true);
-       
-    }
+setErrorName(false);
+setErrorEmail(false);
+setErrorForMessage(false);
     setFormData((prev) => {
       return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
-
   }
 
-  
   function handleSubmit(event) {
     event.preventDefault();
+    
+    if (formData.name === "") setErrorName(true);
+    else if (formData.email === "") setErrorEmail(true);
+    else if (formData.message === "") setErrorForMessage(true);
 
     console.log(formData);
   }
@@ -64,11 +67,9 @@ function ContactForm() {
               name="name"
               value={formData.name}
             />
-            {error&& <p className="text-red-500 text-xs italic">
-  {errorMessage}
-</p>}
-
-            
+            {errorName && (
+              <p className="text-red-500 text-xs italic">{errorMessage}</p>
+            )}
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label
@@ -86,9 +87,9 @@ function ContactForm() {
               name="email"
               value={formData.email}
             />
-              {error&& <p className="text-red-500 text-xs italic">
-  {errorMessage}
-</p>}
+            {errorEmail && (
+              <p className="text-red-500 text-xs italic">{errorMessage}</p>
+            )}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -130,9 +131,9 @@ function ContactForm() {
               name="message"
               value={formData.message}
             ></textarea>
-              {error&& <p className="text-red-500 text-xs italic">
-  {errorMessage}
-</p>}
+            {errorForMessage && (
+              <p className="text-red-500 text-xs italic">{errorMessage}</p>
+            )}
           </div>
         </div>
 

@@ -11,7 +11,7 @@ import Product from '../components/Product'
 import MoodBoard from '../components/MoodBoard'
 import LogoHolder from '../components/LogoHolder'
 import ContactForm from '../components/pagecomponents/ContactForm'
-// import Footer from "../components/Footer"
+
 import SectionSign from "../components/SectionSign"
 import Separator from "../components/Separator"
 
