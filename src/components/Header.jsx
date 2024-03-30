@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 
 import { IoSearchSharp } from "react-icons/io5";
@@ -121,13 +121,14 @@ function Header() {
                   key={nameLink}
                   className="m-6 md:m-0 md:ml-8 text-l md:text-xl cursor-pointer"
                 >
-                  <Link
+                  <NavLink
                     to={link}
-                    className=" hover:text-pink-500 duration-500 hover:font-bold "
+                 
+                    className={({isActive})=>isActive?"active-link":"hover:text-pink-500 duration-500 hover:font-bold"}
                     onClick={closeMenu}
                   >
                     {nameLink}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

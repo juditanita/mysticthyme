@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 function Footer() {
   const links = [
     { id: 1, nameLink: "Home", link: "/" },
-    { id: 2, nameLink: "Shop", link: "/shop" },
-    { id: 3, nameLink: "About", link: "/about" },
-    { id: 4, nameLink: "Workshops", link: "/workshops" },
-    { id: 5, nameLink: "Contact", link: "/contact" },
-    { id: 6, nameLink: "Terms & Conditions", link: "/terms" },
-    { id: 7, nameLink: "Privacy", link: "/privacy" },
+    { id: 2, nameLink: "Shop", link: "products" },
+    { id: 3, nameLink: "About", link: "about" },
+    { id: 4, nameLink: "Workshops", link: "workshops" },
+    { id: 5, nameLink: "Contact", link: "contact" },
+    { id: 6, nameLink: "Terms & Conditions", link: "terms" },
+    { id: 7, nameLink: "Privacy", link: "privacy" },
   ];
   const footerLink = links.filter((item)=>item.id<=4).map((item) => {
     const { nameLink, link, id } = item;

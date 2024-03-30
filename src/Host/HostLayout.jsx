@@ -1,18 +1,35 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import { Link,NavLink,Outlet } from 'react-router-dom'
 
 function HostLayout() {
-  const className='border-2 border-gray-200 bg-blue-100   py-2 w-2/5 text-center sm:w-auto sm:py-2 sm:px-4'
+  const className='py-2 w-2/5 text-center sm:w-auto sm:py-2 sm:px-4';
+    
+
+const activeStyles = { 
+
+  fontWeight: "bold", 
+
+  textDecoration: "underline", 
+
+  color: "#161616",
+  
+   
+
+} 
+
   return (
     <> 
 
     <nav className="host-nav flex sm:justify-between flex-col mx-20 pt-20  gap-4   sm:flex-row  sm:px-10 md:mx-20  xl:mx-40"> 
 
-        <Link to="." className={className}>Dashboard</Link> 
+        <NavLink to="." end className={className}
+             style={({ isActive }) => isActive ? activeStyles : null}
+             >Dashboard</NavLink> 
 
-        <Link to="income" className={className}>Income</Link> 
+        <NavLink to="income" className={className}      style={({ isActive }) => isActive ? activeStyles : null}>Income</NavLink> 
 
-        <Link to="reviews" className={className}>Reviews</Link> 
+        <NavLink to="reviews" className={className}      style={({ isActive }) => isActive ? activeStyles : null}
+        >Reviews</NavLink> 
 
     </nav> 
 
