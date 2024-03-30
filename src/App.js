@@ -11,6 +11,9 @@ import Home
  import ProductDetails from "./pages/ProductDetails.jsx"
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import HostLayout from './Host/HostLayout.jsx';
+import Income from "./Host/Income.jsx";
+import Reviews from "./Host/Reviews.jsx";
 
 
 function App() {
@@ -32,6 +35,13 @@ function App() {
     <Route path="/contact" element={<Contact/>}/>
     <Route path="/workshops" element={<Workshop/>}/>
     </Route>
+    <Route path="/host" element={<HostLayout />} > 
+
+<Route path="/host/income" element={<Income />} /> 
+
+<Route path="/host/reviews" element={<Reviews />} /> 
+
+</Route> 
   </Routes> 
     </BrowserRouter>
     

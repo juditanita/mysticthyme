@@ -13,7 +13,7 @@ function LayoutCustomers() {
        
         <Header />
       </div>
-<main className="mt-"><Outlet /></main>
+<main ><Outlet /></main>
       
       <Footer />
     </>

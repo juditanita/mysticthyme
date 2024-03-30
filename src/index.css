@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 .flex-one {
   display: flex;
@@ -26,12 +27,20 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
-  display: inline-block;
+  /* display: inline-block; */
+}
+
+header{
+  z-index:100;
+ 
 }
 
 
-
-
+@media screen  and (max-width:640px){
+  header-open{
+    height:100vh;
+  }
+}
 
 .container
 {
@@ -50,6 +59,7 @@ img {
 }
 .hero-container {
   position: relative;
+  z-index:-1;
 }
 
 
@@ -81,13 +91,14 @@ img {
 
 #shammanic{
   background-image: url("./assets/website-imgs/shambg.png");
-  z-index:5;
+  z-index:2;
   
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
 }
+
 .contact-header{
   background-image: url("./assets/website-imgs/moodboardA.png");
  padding: 45px;
@@ -97,7 +108,7 @@ img {
   background-position: 50% 10%;
   background-size: 90%;
   background-repeat: no-repeat;
-  position: relative;
+
 }
 .about-header{
   background-image: url("./assets/website-imgs/about-hero/3.png");
