@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Paragraphs from "../components/ShortComponets/Paragraphs";
+import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 
 function ProductDetails() {
   const params = useParams();
@@ -19,6 +20,7 @@ function ProductDetails() {
   return <div className="product-details-container">
     {product?
     <div className="">
+      <BackToAllArrow>all Products</BackToAllArrow>
       <img src={product.img} alt="" />
       <h3>{product.title}</h3>
       <Paragraphs>{product.description}</Paragraphs>

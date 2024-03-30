@@ -1,47 +1,30 @@
-import React from 'react'; 
-import { useParams } from 'react-router-dom';
-
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 
 function HostWorkshopDetails() {
-  const {id}=useParams();
-  const [currentWorkshop, setCurrentWorkshop]=React.useState(null);
+  const params = useParams();
+  const [currentWorkshop, setCurrentWorkshop] = React.useState(null);
 
   React.useEffect(() => {
-    fetch(`/api/host/workshops/${id}`)
+    fetch(`/api/host/workshops/${params.id}`)
       .then((res) => res.json())
       .then((data) => setCurrentWorkshop(data.workshops));
-  }, [id]);
+  }, [params.id]);
 
+
+  return (<>
+    {currentWorkshop?(<section>
+
+      <BackToAllArrow>all workshops</BackToAllArrow>
+      <div className="container">
+         <img src={currentWorkshop.img} /> 
+         <h3>{ currentWorkshop.title}</h3> 
+      </div>
+ </section>):(<h1>Loading...</h1>)}
+ </>
  
-
-  if(!currentWorkshop){
-    <h1>Loading...</h1>
-  }
-  return (
-    <section> 
-
-            <div className="container"> 
-
-                <div className=""> 
-
-                    <img src={currentWorkshop.img} width={150} /> 
-
-                    <div className=""> 
-
-                      {currentWorkshop.placesAvailable}
-
-                        <h3>{currentWorkshop.title}</h3> 
-
-                        <h4>${currentWorkshop.price}</h4> 
-
-                    </div> 
-
-                </div> 
-
-            </div> 
-
-        </section> 
-  )
+  );
 }
 
-export default HostWorkshopDetails
+export default HostWorkshopDetails;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function HostWorkshop() {
   const [workshops, setWorkshops] = React.useState([]) ;
@@ -14,7 +15,8 @@ function HostWorkshop() {
 const workshopEl=workshops.map(workshop=>{
   const {id, img,title, description,placesAvailable,reviews,price}=workshop;
   return(
-    <div key={id}>
+    <Link to={`/host/workshops/${id}`}>
+        <div key={id}>
       <img src={img} alt={title}/>
       <h3>{title}</h3>
       <h6>{price}</h6>
@@ -22,7 +24,8 @@ const workshopEl=workshops.map(workshop=>{
       <span>{placesAvailable}</span>
       {reviews.map(rev=><p >{rev}</p>)}
 
-    </div>
+    </div></Link>
+
   )
 })
   return (

@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import Workshop from './pages/Workshops.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
 import HostLayout from './Host/HostLayout.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
@@ -42,15 +42,21 @@ function App () {
         <Route path="host" element={<HostLayout />}>
 
           <Route index element={<Dashboard />} />
-
-          <Route path="income" element={<Income />} />
-          <Route path="workshops" element={<HostWorkshop />} />
-          <Route path="workshops/:id" element={<HostWorkshopDetails />} />
           <Route path="reviews" element={<Reviews />} />
-
+          <Route path="income" element={<Income />} />
+          
+          {/* <Route path="workshops" element={<HostWorkshop />} /> */}
+          <Route path="workshops" element={<Outlet />} >
+          <Route index element={<HostWorkshop />} />
+          <Route path=":id" element={<HostWorkshopDetails />} />
+         
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
+
+
+
   );
 }
 
