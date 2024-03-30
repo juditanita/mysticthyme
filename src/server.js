@@ -48,7 +48,7 @@ createServer({
 
         server.create("product",
         {  id:"4",
-             img:require("./assets/website-imgs/products/2.png"),
+        img:require("./assets/website-imgs/products/2.png"),
             title:"Relax Mushroom ",
             description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium",
             tags:["relax","calmness"],

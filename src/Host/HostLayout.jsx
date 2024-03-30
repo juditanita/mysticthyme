@@ -30,6 +30,9 @@ const activeStyles = {
 
         <NavLink to="reviews" className={className}      style={({ isActive }) => isActive ? activeStyles : null}
         >Reviews</NavLink> 
+        <NavLink to="workshops" className={className}      style={({ isActive }) => isActive ? activeStyles : null}
+        >
+          Workshops</NavLink> 
 
     </nav> 
 

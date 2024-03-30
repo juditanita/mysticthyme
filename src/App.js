@@ -13,6 +13,8 @@ import HostLayout from './Host/HostLayout.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
 import Reviews from './Host/Reviews.jsx';
+import HostWorkshopDetails from './Host/HostWorkshopDetails.jsx';
+import HostWorkshop from './Host/HostWorkshop.jsx';
 
 function App () {
   return (
@@ -42,7 +44,8 @@ function App () {
           <Route index element={<Dashboard />} />
 
           <Route path="income" element={<Income />} />
-
+          <Route path="workshops" element={<HostWorkshop />} />
+          <Route path="workshops/:id" element={<HostWorkshopDetails />} />
           <Route path="reviews" element={<Reviews />} />
 
         </Route>
