@@ -19,23 +19,23 @@ function Header() {
     },
     {
       nameLink: "Shop",
-      link: "/products",
+      link: "products",
     },
     {
       nameLink: "About",
-      link: "/about",
+      link: "about",
     },
     {
       nameLink: "Workshops",
-      link: "/workshops",
+      link: "workshops",
     },
     {
       nameLink: "Contact",
-      link: "/contact",
+      link: "contact",
     },
     {
       nameLink: "Host",
-      link: "/host",
+      link: "host",
     },
   ];
   const [open, setOpen] = React.useState(false);

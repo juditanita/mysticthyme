@@ -13,7 +13,10 @@ import Home
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import HostLayout from './Host/HostLayout.jsx';
 import Income from "./Host/Income.jsx";
+import Dashboard from "./Host/Dashboard.jsx";
 import Reviews from "./Host/Reviews.jsx";
+
+
 
 
 function App() {
@@ -23,25 +26,30 @@ function App() {
      <BrowserRouter>
   
     <Routes> 
-<Route element={<LayoutCustomers/>}>
-     <Route path="/" element={<Home />} /> 
+<Route path="/" element={<LayoutCustomers/>}>
+     <Route index element={<Home />} /> 
 
-    <Route path="/about" element={<About />} /> 
-    <Route path="/products" element={<ProductAll/>}/>
+    <Route path="about" element={<About />} /> 
+    <Route path="products" element={<ProductAll/>}/>
      
 
-<Route path="/products/:id" element={<ProductDetails />} />  
+<Route path="products/:id" element={<ProductDetails />} />  
 
-    <Route path="/contact" element={<Contact/>}/>
-    <Route path="/workshops" element={<Workshop/>}/>
+    <Route path="contact" element={<Contact/>}/>
+    <Route path="workshops" element={<Workshop/>}/>
     </Route>
-    <Route path="/host" element={<HostLayout />} > 
 
-<Route path="/host/income" element={<Income />} /> 
+    {/* host layout  */}
+    <Route path="host" element={<HostLayout />}> 
 
-<Route path="/host/reviews" element={<Reviews />} /> 
 
-</Route> 
+<Route index element={<Dashboard/>} /> 
+
+<Route path="income" element={<Income />} /> 
+
+<Route path="reviews" element={<Reviews />} /> 
+
+</Route>  
   </Routes> 
     </BrowserRouter>
     
