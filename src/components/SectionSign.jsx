@@ -46,18 +46,18 @@ setSignUp((prev)=>{
        
         <ClearBtn className={`w-1/2 sm:w-1/5 sm:-ml-2 `}>Subscribe</ClearBtn>
       </form>
-      <div class="flex justify-center">
-                    <div class="mr-8">
-                        <p class="text-2xl font-bold">5k+</p>
-                        <p class="text-sm">customers</p>
+      <div className="flex justify-center">
+                    <div className="mr-8">
+                        <p className="text-2xl font-bold">5k+</p>
+                        <p className="text-sm">customers</p>
                     </div>
-                    <div class="mr-8">
-                        <p class="text-2xl font-bold">1+</p>
-                        <p class="text-sm">workshops</p>
+                    <div className="mr-8">
+                        <p className="text-2xl font-bold">1+</p>
+                        <p className="text-sm">workshops</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-bold">4k+</p>
-                        <p class="text-sm">retreat</p>
+                        <p className="text-2xl font-bold">4k+</p>
+                        <p className="text-sm">retreat</p>
                     </div>
                 </div>
     </section>

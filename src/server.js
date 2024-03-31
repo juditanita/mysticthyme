@@ -3,8 +3,9 @@ createServer({
 
     models: { 
 
-        products: Model, 
-        workshops:Model,
+        products: Model,
+        workshops:Model 
+      
 
     }, 
 
@@ -19,7 +20,23 @@ createServer({
             price:25,
             available:true,
            category:"Herbs",
-           reviews:["","",] }) 
+           reviews:[
+            {
+              revId:"123",
+              reviewName:"John Delay",
+              reviewCountry:"Japan",
+              reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+            },
+            {
+              revId:"127",
+              reviewName:"Ashley Delay",
+              reviewCountry:"Ireland",
+              reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
+            }
+
+
+
+           ] }) 
 
         server.create("product", {  
             id:"2",
@@ -30,7 +47,19 @@ createServer({
             price:25,
             available:true,
            category:"Herbs",
-           reviews:["Lorem, ipsum dolor sit amet consectetur adipisicing elit","Lorem, ipsum dolor sit amet consectetur adipisicing elit",]
+           reviews:[ {
+            revId:"127",
+            reviewName:"Ashley Delay",
+            reviewCountry:"Ireland",
+            reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
+          },
+          {
+            revId:"127",
+            reviewName:"Baku Nameo",
+            reviewCountry:"Madagscar",
+            reviewDetails:"Jack Tar man-of-war Pieces of Eight coffer aye to go on account yardarm poop deck shrouds tackle. Pieces of Eight marooned lugsail gun plunder grog blossom rope's end gunwalls mutiny crow's nest. Shrouds Letter of Marque long clothes long boat lookout black spot loot provost square-rigged Chain Shot."
+          },
+       ]
         }) 
 
         server.create("product", 
@@ -42,7 +71,7 @@ createServer({
             price:12,
             available:true,
            category:"Herbs",
-           reviews:["Lorem, ipsum dolor sit amet consectetur"," amet consectetur adipisicing elit."],
+           reviews:[],
         
         }
         ) 
@@ -57,8 +86,7 @@ createServer({
             available:true,
            category:"Mushroom",
            reviews: [
-            'Lorem, ipsum dolor sit amet consectetur',
-            ' amet consectetur adipisicing elit.',
+            
           ]
         
         }
@@ -73,7 +101,7 @@ createServer({
             price:5,
             available:true,
            category:"Rituals",
-           reviews:["Lorem, ipsum dolor sit amet consectetur "]
+           reviews:[]
         
         }) 
 
@@ -86,7 +114,7 @@ createServer({
             price:8,
             available:true,
             category:"Rituals",
-            reviews:["Lorem, ipsum dolor sit amet consectetur"]
+            reviews:[]
         
         }) 
         server.create("product", 
@@ -98,7 +126,7 @@ createServer({
             price:20,
             available:false,
             category:"Rituals",
-            reviews:["Lorem, ipsum dolor sit amet consectetur"]
+            reviews:[]
         
         }
         ) 
@@ -111,7 +139,7 @@ createServer({
             price:60,
             available:true,
              category:"Mushroom",
-           reviews:["","",]
+           reviews:[]
         
         }
         )
@@ -123,7 +151,7 @@ createServer({
             price:30,
             available:true,
            category:"Mushroom",
-           reviews:[" ipsum dolor sit amet consectetur adipisicing elit"]
+           reviews:[]
         
         })
         server.create('workshop', 
@@ -150,8 +178,12 @@ createServer({
             placesAvailable: 3,
       
             reviews: [
-              'Lorem, ipsum dolor sit amet consectetur',
-              ' amet consectetur adipisicing elit.',
+              {
+                revId:"127",
+                reviewName:"Baku Nameo",
+                reviewCountry:"Madagscar",
+                reviewDetails:"Jack Tar man-of-war Pieces of Eight coffer aye to go on account yardarm poop deck shrouds tackle. Pieces of Eight marooned lugsail gun plunder grog blossom rope's end gunwalls mutiny crow's nest. Shrouds Letter of Marque long clothes long boat lookout black spot loot provost square-rigged Chain Shot."
+              }
             ],
           })
           server.create('workshop', {
@@ -171,6 +203,8 @@ createServer({
           })
 
     }, 
+
+   
 
     routes() { 
 

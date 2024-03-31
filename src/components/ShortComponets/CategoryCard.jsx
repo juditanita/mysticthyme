@@ -19,7 +19,7 @@ const catDesc = text.join(" ");
       <Paragraphs className={`text-md text-justify px-2`}>
         {catDesc}...
       </Paragraphs>
-      <div class=" mt-auto pt-3">
+      <div className=" mt-auto pt-3">
         <Button className={`mb-2 mt-3  bg-black text-white w-5/7 md:w-4/5 mx-auto`}>
           Shop Now
         </Button>

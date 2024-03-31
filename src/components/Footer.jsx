@@ -15,12 +15,12 @@ function Footer() {
   ];
   const footerLink = links.filter((item)=>item.id<=4).map((item) => {
     const { nameLink, link, id } = item;
-    console.log(nameLink)
+   
     return <Navbar key={id} nameLink={nameLink} link={link}  />;
   });
   const footerLinkOther = links.filter((item)=>item.id>4).map((item) => {
     const { nameLink, link, id } = item;
-    console.log(nameLink)
+   
     return <Navbar key={id} nameLink={nameLink} link={link}  />;
   });
 

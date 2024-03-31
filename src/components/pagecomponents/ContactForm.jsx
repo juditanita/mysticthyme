@@ -139,15 +139,15 @@ setErrorForMessage(false);
 
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3  sm:flex sm:justify-between text-center align-center">
-            <label class=" block text-gray-600 font-bold sm:w-1/7 mb-4 sm:mb-0 ">
+            <label className=" block text-gray-600 font-bold sm:w-1/7 mb-4 sm:mb-0 ">
               <input
-                class="mr-2 leading-tight"
+                className="mr-2 leading-tight"
                 type="checkbox"
                 checked={formData.subscribe}
                 onChange={handleChange}
                 name="subscribe"
               />
-              <span class="text-sm">Send me your newsletter as well!</span>
+              <span className="text-sm">Send me your newsletter as well!</span>
             </label>
             <div className="sm:w-5/7"></div>
             <div className="sm:w-1/7   sm:justify-self-end">

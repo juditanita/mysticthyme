@@ -4,7 +4,7 @@ import ProductCard from "./ShortComponets/ProductCard.jsx"
 
 function Product() {
     const productElement= products.filter(itemCond=> {
-        console.log(itemCond.title + itemCond.price);
+      
         return(itemCond.price<=20)}
        
         
@@ -12,7 +12,7 @@ function Product() {
         ).map((item=>{
         const { img, title, description, price,category,tags}=item;
         if(item.available){
-            console.log(tags);
+         
 
             
             const singleTagEl=tags.map((singleTag,index)=>{return(

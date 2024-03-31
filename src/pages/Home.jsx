@@ -14,6 +14,7 @@ import ContactForm from '../components/pagecomponents/ContactForm'
 
 import SectionSign from "../components/SectionSign"
 import Separator from "../components/Separator"
+import ReviewBlock from '../components/ReviewBlock'
 
 
 
@@ -58,6 +59,7 @@ function Home() {
    </div>
  
   <ContactForm/>
+  <ReviewBlock/>
  
    <MoodBoard />
     
