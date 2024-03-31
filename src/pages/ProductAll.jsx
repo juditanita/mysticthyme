@@ -17,6 +17,8 @@ function ProductAll() {
 
   const productElement = products.map((item) => {
     const { id, img, title, description, price, category, tags } = item;
+   
+   
 
     if (item.available) {
       const singleTagEl = tags.map((singleTag, index) => {
@@ -33,11 +35,15 @@ function ProductAll() {
             <ProductCard
               key={id}
               img={img}
-              description={description}
+              description={description.split(" ",10).join(" ")}
               title={title}
               category={category}
               price={price}
+              imgClass={`w-full product-img`}
+              children ={"Read More..."}
+              childrenClass={`float-right text-red-700`}
             />
+          
             <div className="flex flex-wrap justify-end pe-3 mt-auto pt-3 text-xs font-light">
               {singleTagEl}
             </div>

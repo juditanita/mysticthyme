@@ -93,11 +93,11 @@ function Header() {
           {showInTop && <IoSearchSharp />}
         </div>
 
-        <LogoHolder />
-        <div className="md:flex item-center  justify-evenly bg-white py-4 px-7 md:px-10 mt-4 ">
+         <LogoHolder /> 
+        <div className="md:flex item-center  justify-evenly bg-white pb-4 px-7 md:px-10  ">
           {/*==== menu button=== */}
           <div
-            className="ml-6 mt-3 cursor-pointer font-bold hover:text-pink-800 text-3xl md:hidden"
+            className="ml-6 mt-2 cursor-pointer font-bold hover:text-pink-800 text-3xl md:hidden"
             onClick={handleClick}
           >
             {open ? (

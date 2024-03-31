@@ -56,7 +56,10 @@ createServer({
             price:20,
             available:true,
            category:"Mushroom",
-           reviews:["","",]
+           reviews: [
+            'Lorem, ipsum dolor sit amet consectetur',
+            ' amet consectetur adipisicing elit.',
+          ]
         
         }
          ) 

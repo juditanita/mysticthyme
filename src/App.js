@@ -10,6 +10,9 @@ import ProductDetails from './pages/ProductDetails.jsx';
 
 import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
 import HostLayout from './Host/HostLayout.jsx';
+import HostWorkshopInfo from './Host/HostWorkshopInfo.jsx';
+import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
+import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
 import Reviews from './Host/Reviews.jsx';
@@ -44,19 +47,21 @@ function App () {
           <Route index element={<Dashboard />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="income" element={<Income />} />
-          
+
           {/* <Route path="workshops" element={<HostWorkshop />} /> */}
-          <Route path="workshops" element={<Outlet />} >
-          <Route index element={<HostWorkshop />} />
-          <Route path=":id" element={<HostWorkshopDetails />} />
-         
+          <Route path="workshops" element={<Outlet />}>
+            <Route index element={<HostWorkshop />} />
+            <Route path=":id" element={<HostWorkshopDetails />} >
+            <Route index element={<HostWorkshopInfo />} />
+
+            <Route path="pricing" element={<HostWorkshopPricing />} />
+
+            <Route path="photos" element={<HostWorkshopPhotos />} />
+</Route>
           </Route>
         </Route>
       </Routes>
     </BrowserRouter>
-
-
-
   );
 }
 

@@ -10,7 +10,7 @@ function LogoHolder({className,children,classNameH3, classNameLogo}) {
 
   return (
     <div className="w-screen grid justify-items-center">
-       <Link  to="/" className="pt-4 text-2xl md:text-3xl cursor-pointer flex items-center">
+       <Link  to="/" className="pt-0 text-xl md:text-xl cursor-pointer flex items-center">
   
    <img src={img} alt="site logo flower" className={classNameLogo}/> 
   
