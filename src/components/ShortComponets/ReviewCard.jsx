@@ -1,26 +1,43 @@
 import React from "react";
 
-function ReviewCard({ reviewName, reviewDetails, reviewCountry }) {
-  return (
-    <div id="item1" className="carousel-item w-full">
-      <blockquote className="rounded-lg grid grid-cols-1 md:grid-cols-2 bg-gray-50 p-6 shadow-sm ">
-        <div>
-          <p className="mt-0.5 text-lg font-medium text-gray-900">
-            {reviewName}
-          </p>
 
-          <span>{reviewCountry}</span>
+
+function ReviewCard({ reviewName, reviewDetails, reviewCountry,randomPerson }) {
+    const [index,setIndex]=React.useState(0);
+
+    function randomPerson(item) {
+      const numberRandom=item[Math.floor(Math.random() * item.length)]
+      return setIndex(numberRandom)
+    
+  }
+   
+
+ return( <div>
+    <div className="w-full md:w-6/7 mx-auto py-4">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex flex-wrap items-center justify-between">
+          <div className="w-full md:w-1/5 px-4 mb-8 md:mb-0">
+            <div className="max-w-md mx-auto p-4 lg:mx-0">
+              <img src="" alt="" />
+              <h5 className="text-lg font-medium text-red-800 mb-1">
+                {reviewName}
+              </h5>
+              <span className="font-muted text-sm">{reviewCountry}</span>
+            </div>
+          </div>
+          <div className="w-full md:w-2/3 xl:w-auto ">
+            <div className="max-w-md mx-auto lg:mx-0 mb-8 ">
+              <p className="text-base ">{reviewDetails}</p>
+            </div>
+          </div>
         </div>
-<div>   <p className="mt-4 text-gray-700 w-full">{reviewDetails}</p></div>
-     
-        <div className="flex justify-center w-full py-2 gap-2">
-          {/* <a href="#item1" className="btn btn-xs">
-            1
-          </a> */}
-        </div>
-      </blockquote>
+      </div>
     </div>
-  );
+    <div className="w-full text-center"><button onClick={randomPerson} className="">
+      More Reviews
+    </button></div>
+    
+  </div>)
 }
 
 export default ReviewCard;
