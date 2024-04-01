@@ -10,7 +10,7 @@ function ReviewBlock() {
   //   const [reviewsArr,setReviewsArr]=React.useState([])
 
  
-
+console.log(reviewsAll);
  function randomNumberGenerator(item){
     const randomN = Math.floor(Math.random() * item.length);
     setRandomNumber(randomN)
@@ -24,7 +24,10 @@ function ReviewBlock() {
   
      const someReviews=reviewsAll[Math.floor(Math.random()*reviewsAll.length)]
     
-     console.log(someReviews)
+     if(someReviews.reviews.length!==0){
+        
+        setReviewsAll(someReviews.reviews);
+     }
    
 
     
@@ -87,6 +90,7 @@ fetchReviews()
           <h3 className="text-center mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-xl px-6 pb-6">
             Read trusted reviews from our customers
           </h3>
+          <p>{reviewsAll.map(item=>item.reviewCountry)}</p>
           {/* <div>{reviewPart}</div> */}
           <div className="w-full text-center">
             {/* <button onClick={randomNumberGenerator(reviews)} className="bg-white border-2 p-4">
