@@ -65,7 +65,7 @@ function Home() {
  
   <ContactForm/>
  
- <div className="w-3/4 mx-auto">  <MoodBoard /></div>
+ <div className="w-3/4 mx-auto my-8 ">  <MoodBoard /></div>
  
     
    </main>

@@ -52,7 +52,13 @@ function Workshops() {
   })
   return(
     <section className="container">
-      {workshopEl}
+      <h2 className='text-2xl md:text-4xl text-center my-12'>Upcoming workshops</h2>
+     
+     
+ 
+     
+     {workshopEl}
+      
     </section>
   )
 }
