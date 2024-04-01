@@ -20,19 +20,15 @@ createServer({
             price:25,
             available:true,
            category:"Herbs",
-           reviews:[
+           reviewsArr:[
             {
               revId:"123",
-              reviewName:"John Delay",
-              reviewCountry:"Japan",
+              reviewName:"Elek Buzia",
+              reviewCountry:"Columbia",
               reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
-            },
-            {
-              revId:"127",
-              reviewName:"Ashley Delay",
-              reviewCountry:"Ireland",
-              reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
             }
+            
+           
 
 
 
@@ -47,18 +43,15 @@ createServer({
             price:25,
             available:true,
            category:"Herbs",
-           reviews:[ {
-            revId:"127",
-            reviewName:"Pat Murphy",
-            reviewCountry:"Ireland",
-            reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
-          },
-          {
-            revId:"127",
-            reviewName:"Baku Nameo",
-            reviewCountry:"Madagscar",
-            reviewDetails:"Jack Tar man-of-war Pieces of Eight coffer aye to go on account yardarm poop deck shrouds tackle. Pieces of Eight marooned lugsail gun plunder grog blossom rope's end gunwalls mutiny crow's nest. Shrouds Letter of Marque long clothes long boat lookout black spot loot provost square-rigged Chain Shot."
-          },
+           reviewsArr:[ 
+           
+            {
+              revId:"123",
+              reviewName:"John Delay",
+              reviewCountry:"Japan",
+              reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+            },
+          
        ]
         }) 
 
@@ -71,7 +64,14 @@ createServer({
             price:12,
             available:true,
            category:"Herbs",
-           reviews:[],
+           reviewsArr:[
+            {
+              revId:"123",
+              reviewName:"John Delay",
+              reviewCountry:"Japan",
+              reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+            },
+          ],
         
         }
         ) 
@@ -85,7 +85,14 @@ createServer({
             price:20,
             available:true,
            category:"Mushroom",
-           reviews: [
+           reviewsArr: [
+
+               {
+              revId:"123",
+              reviewName:"John Delay",
+              reviewCountry:"Japan",
+              reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+            },
             
           ]
         
@@ -101,7 +108,14 @@ createServer({
             price:5,
             available:true,
            category:"Rituals",
-           reviews:[]
+           reviewsArr:[  
+            {
+              revId:"123",
+              reviewName:"John Delay",
+              reviewCountry:"Japan",
+              reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+            },
+          ]
         
         }) 
 
@@ -114,7 +128,14 @@ createServer({
             price:8,
             available:true,
             category:"Rituals",
-            reviews:[]
+            reviewsArr:[ 
+              {
+                revId:"123",
+                reviewName:"John Delay",
+                reviewCountry:"Japan",
+                reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+              },
+              ]
         
         }) 
         server.create("product", 
@@ -126,7 +147,14 @@ createServer({
             price:20,
             available:false,
             category:"Rituals",
-            reviews:[]
+            reviewsArr:[ 
+              {
+                revId:"123",
+                reviewName:"John Delay",
+                reviewCountry:"Japan",
+                reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+              },
+              ]
         
         }
         ) 
@@ -139,7 +167,19 @@ createServer({
             price:60,
             available:true,
              category:"Mushroom",
-           reviews:[]
+           
+            reviewsArr: [
+              
+               
+              {
+                revId:"123",
+                reviewName:"John Delay",
+                reviewCountry:"Japan",
+                reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+              },
+               
+             ]
+           
         
         }
         )
@@ -151,7 +191,18 @@ createServer({
             price:30,
             available:true,
            category:"Mushroom",
-           reviews:[]
+           reviewsArr:[
+        
+            {
+              revId:"127",
+              reviewName:"Ashley Delay",
+              reviewCountry:"Ireland",
+              reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
+            }
+
+
+
+           ]
         
         })
         server.create('workshop', 
@@ -162,10 +213,18 @@ createServer({
           description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
           price: 320,
           placesAvailable: 4,
-          reviews: [
-            'Lorem, ipsum dolor sit amet consectetur',
-            ' amet consectetur adipisicing elit.',
-          ],
+          reviewsArr:[
+          
+            {
+              revId:"127",
+              reviewName:"Ashley Delay",
+              reviewCountry:"Ireland",
+              reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
+            }
+
+
+
+           ],
           hostId:"1234"
         })
         server.create('workshop', {
@@ -177,14 +236,23 @@ createServer({
             price: 1220,
             placesAvailable: 3,
       
-            reviews: [
+            reviewsArr:[
+              {
+                revId:"123",
+                reviewName:"John Belsky",
+                reviewCountry:"Japan",
+                reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
+              },
               {
                 revId:"127",
-                reviewName:"Baku Nameo",
-                reviewCountry:"Madagscar",
-                reviewDetails:"Jack Tar man-of-war Pieces of Eight coffer aye to go on account yardarm poop deck shrouds tackle. Pieces of Eight marooned lugsail gun plunder grog blossom rope's end gunwalls mutiny crow's nest. Shrouds Letter of Marque long clothes long boat lookout black spot loot provost square-rigged Chain Shot."
+                reviewName:"Ashley Delay",
+                reviewCountry:"Ireland",
+                reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
               }
-            ],
+  
+  
+  
+             ],
           })
           server.create('workshop', {
             id: '3',
@@ -195,10 +263,18 @@ createServer({
             price: 120,
             placesAvailable: 0,
       
-            reviews: [
-              'Lorem, ipsum dolor sit amet consectetur',
-              ' amet consectetur adipisicing elit.',
-            ],
+            reviewsArr:[
+            
+              {
+                revId:"127",
+                reviewName:"Ashley Delay",
+                reviewCountry:"England",
+                reviewDetails:"Mutiny gaff six pounders aye tack reef sails boom parley pillage maroon. Fluke starboard fathom lugsail man-of-war driver prow flogging rope's end loot. Boatswain gaff bilged on her anchor spirits scallywag rigging brigantine topmast chase guns lee."
+              }
+  
+  
+  
+             ],
             hostId:"1234"
           })
 

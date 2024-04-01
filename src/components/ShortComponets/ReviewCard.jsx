@@ -3,13 +3,7 @@ import React from "react";
 
 
 function ReviewCard({ reviewName, reviewDetails, reviewCountry,randomPerson }) {
-    const [index,setIndex]=React.useState(0);
-
-    function randomPerson(item) {
-      const numberRandom=item[Math.floor(Math.random() * item.length)]
-      return setIndex(numberRandom)
-    
-  }
+   
    
 
  return( <div>
@@ -33,9 +27,7 @@ function ReviewCard({ reviewName, reviewDetails, reviewCountry,randomPerson }) {
         </div>
       </div>
     </div>
-    <div className="w-full text-center"><button onClick={randomPerson} className="">
-      More Reviews
-    </button></div>
+    
     
   </div>)
 }
