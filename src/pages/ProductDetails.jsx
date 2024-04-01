@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Paragraphs from "../components/ShortComponets/Paragraphs";
+
 import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 import ProductCard from "../components/ShortComponets/ProductCard";
 

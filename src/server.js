@@ -237,12 +237,7 @@ createServer({
             placesAvailable: 3,
       
             reviewsArr:[
-              {
-                revId:"123",
-                reviewName:"John Belsky",
-                reviewCountry:"Japan",
-                reviewDetails:"Chase provost careen crack Jennys tea cup matey scurvy gabion grapple bucko Davy Jones' Locker. Lugsail hornswaggle take a caulk squiffy brigantine run a shot across the bow topgallant aft Arr bilged on her anchor. Keel topgallant yardarm spirits Blimey coxswain lugger rutters keelhaul pink."
-              },
+        
               {
                 revId:"127",
                 reviewName:"Ashley Delay",

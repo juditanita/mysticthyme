@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import BtnWithArroy from "../components/ShortComponets/BtnWithArroy";
 import Footer from "../components/Footer";
 import LogoHolder from "../components/LogoHolder";
-import SectionSign from "../components/SectionSign"
+
 
 
 function About() {
