@@ -5,7 +5,7 @@ function HostWorkshop() {
   const [workshops, setWorkshops] = React.useState([]) ;
   React.useEffect(() => { 
 
-    fetch("/api/host/workshops/") 
+    fetch("/api/host/workshops") 
 
         .then(res => res.json()) 
 
@@ -32,7 +32,7 @@ const workshopEl=workshops.map(workshop=>{
     <section className='container'>
       <h2>Your listed workshops</h2>
     {
-    workshops.length>0?(<div>{workshopEl}</div>):(<p>Currently no available workshop</p>)
+    workshops&& {workshopEl}
   }
   </section>
     

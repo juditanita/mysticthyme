@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 import AboutShort from '../components/AboutShort'
 import Banner from '../components/Banner'
 import Category from '../components/Category'
-
+import { Link } from "react-router-dom";
 import Product from '../components/Product'
 
 import MoodBoard from '../components/MoodBoard'
@@ -14,7 +14,7 @@ import ContactForm from '../components/pagecomponents/ContactForm'
 
 import SectionSign from "../components/SectionSign"
 import Separator from "../components/Separator"
-import ReviewBlock from '../components/ReviewBlock'
+
 
 
 
@@ -35,9 +35,11 @@ function Home() {
    
     <AboutShort/>
    
-   
-    <Banner childrenH1="Best Selling Products" childrenPar="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, facere. Lorem ipsum dolor sit amet consectetur"
+   <Link to="products">
+   <Banner childrenH1="Best Selling Products" childrenPar="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, facere. Lorem ipsum dolor sit amet consectetur"
     childrenBtn="Shop Now"/>
+   </Link>
+   
     <div className='py-10'>
     <LogoHolder  className={`hidden`} >Chategories</LogoHolder>
     </div>
@@ -46,10 +48,13 @@ function Home() {
     
  <div className=' my-14 sm:my-20'><Product/></div>
   <div id="shammanic" className='p-8'>
+   <Link to="workshops">
  <Banner classNameH1={`px-6`} childrenH1="Shammanic Workshop"
     childrenBtn="Get info"
     classNameBtn={`bg-white`}
     childrenPar="Join our most unforgettable events and retreats and learn the ancient perspective to harmoniously connect with the world and self."/>   
+    </Link>
+    
     <div className=''>
     
    
@@ -59,9 +64,9 @@ function Home() {
    </div>
  
   <ContactForm/>
-  <ReviewBlock/>
  
-   <MoodBoard />
+ <div className="w-3/4 mx-auto">  <MoodBoard /></div>
+ 
     
    </main>
   

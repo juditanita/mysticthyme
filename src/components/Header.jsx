@@ -93,7 +93,7 @@ function Header() {
           {showInTop && <IoSearchSharp />}
         </div>
 
-          <LogoHolder />  
+           <Link to="/"><LogoHolder /> </Link> 
         <div className="md:flex item-center  justify-evenly bg-white pb-2 px-7 md:px-10  ">
           {/*==== menu button=== */}
           <div

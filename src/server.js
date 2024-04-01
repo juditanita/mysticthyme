@@ -205,7 +205,8 @@ createServer({
            ]
         
         })
-        server.create('workshop', 
+
+        server.create("workshop", 
         {
           id: '1',
           img: require ('./assets/website-imgs/products/7.png'),
@@ -227,7 +228,7 @@ createServer({
            ],
           hostId:"1234"
         })
-        server.create('workshop', {
+        server.create("workshop", {
             id: '2',
             img: require ('./assets/website-imgs/products/7.png'),
             title: '4-days shamanic retreat',
@@ -249,7 +250,7 @@ createServer({
   
              ],
           })
-          server.create('workshop', {
+          server.create("workshop", {
             id: '3',
             img: require ('./assets/website-imgs/products/7.png'),
             title: ' 1 day Mindfull wellness',
@@ -297,13 +298,26 @@ createServer({
             return schema.products.find(id) 
 
         }) 
+        this.get("/workshops", (schema, request) => { 
+
+          return schema.workshops.all() 
+
+      }) 
+      this.get("/workshops/:id", (schema, request) => { 
+
+        const id = request.params.id 
+
+        return schema.workshops.find(id) 
+
+    }) 
+
         this.get ('/host/workshops', (schema, request) => {
-            return schema.workshops.where ({hostId:"1234"});
+            return schema.workshops.where({hostId:"1234"});
           });
           this.get ('/host/workshops/:id', (schema, request) => {
             const id = request.params.id;
       
-            return schema.workshops.findBy ({id,hostId:"1234"});
+            return schema.workshops.findBy({id,hostId:"1234"});
             
           });
 

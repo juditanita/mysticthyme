@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 
 import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 import ProductCard from "../components/ShortComponets/ProductCard";
-
 import ReviewCard from "../components/ShortComponets/ReviewCard";
+
+
 
 function ProductDetails() {
   const params = useParams();
@@ -16,7 +17,7 @@ function ProductDetails() {
       .then((data) => setProduct(data.products));
   }, [params.id]);
 
-  console.log(params);
+ 
 
   return (
     <div className="product-details-container">
@@ -30,20 +31,24 @@ function ProductDetails() {
             <ProductCard
               key={product.id}
               {...product}
-              imgClass={`w-auto product-img md:mx-4`}
-              divClass={`grid grid-cols-1  md:grid-cols-2 md:text-left mx-10`}
+              imgClass={`w-auto product-img mx-auto md:mx-4`}
+              divClass={`grid grid-cols-1 mx-auto w-2/3 md:w-4/5 md:gap-8 md:grid-cols-2 md:text-left `}
             />
-            <div className="w-full flex ">
+            <div className=" mx-12">
             
-              <h4>Reviews</h4>
-              {product.reviews ? (
-                product.reviews.map((review) => {
+              <h3 className="text-center font-bold text-2xl pt-6 text-gray-900 mb-4 ">Reviews</h3>
+              <span className="mb-6 grid place-items-center"> ({product.reviewsArr.length} review found)</span>
+             
+              {product.reviewsArr ? (
+                product.reviewsArr.map((review) => {
+                  console.log(review)
                   return (
-                    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-                      <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-8">
-                        <ReviewCard key={review.revId} {...review} />
+                   
+                      <div class="mt-8 mx-auto w-3/4">
+                       
+                         <ReviewCard key={review.revId} {...review} /> 
                       </div>
-                    </div>
+                  
                   );
                 })
               ) : (
