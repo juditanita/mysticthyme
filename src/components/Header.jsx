@@ -93,8 +93,8 @@ function Header() {
           {showInTop && <IoSearchSharp />}
         </div>
 
-         <LogoHolder /> 
-        <div className="md:flex item-center  justify-evenly bg-white pb-4 px-7 md:px-10  ">
+          <LogoHolder />  
+        <div className="md:flex item-center  justify-evenly bg-white pb-2 px-7 md:px-10  ">
           {/*==== menu button=== */}
           <div
             className="ml-6 mt-2 cursor-pointer font-bold hover:text-pink-800 text-3xl md:hidden"
@@ -110,7 +110,7 @@ function Header() {
 
           <ul
             id="menu"
-            className={`md:flex md:items-center shadow-xl md:shadow-none md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-40 h-screen md:h-40 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in 
+            className={`md:flex md:items-center shadow-xl md:shadow-none md:pb-0 pb-4 absolute md:static bg-white md:z-auto z-40 h-screen md:h-20 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in 
             ${
               open ? "block menu-list" : "hidden"
             }`}
@@ -138,7 +138,7 @@ function Header() {
               Subscribe
             </Button>
 
-            <div className=" pb-3  border-t-2  border-red-200 bg-red-100 border-opacity-25 absolute  z-[-1] sm:hidden px-5 flex place-items-center justify-between w-screen text-sm">
+            <div className=" pb-2  border-t-2  border-red-200 bg-red-100 border-opacity-25 absolute  z-[-1] sm:hidden px-5 flex place-items-center justify-between w-screen text-sm">
               <SocialMedia className={`text-base`} />
               <Button
                 className={`mb-3  hover:text-pink-800   md:mt-0 uppercase tracking-wide pb-0  font-bold md:mb-0 `}

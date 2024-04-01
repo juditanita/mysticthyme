@@ -4,64 +4,48 @@ import Separator from "./Separator";
 
 function ReviewBlock() {
   const [reviews, setReviews] = React.useState([]);
-  const [index,setIndex]=React.useState(0);
+  const [randomNumber,setRandomNumber]=React.useState(0);
+  //   const [revMessage, setRevMessage]=React.useState()
+  //   const [reviewsArr,setReviewsArr]=React.useState([])
 
-  function randomPerson(item) {
+ function randomNumberGenerator(item){
+    const randomN = Math.floor(Math.random() * item.length);
+    setRandomNumber(randomN)
+ }
 
+  const fetchReviews = React.useCallback(async () => {
+    try {
+      const response = await fetch("/api/products");
+      const data = await response.json();
+     let item=data.products
+     item=randomNumberGenerator(item);
+      console.log(data.products[1].reviews.length);
+    } catch (e) {
+      console.log(e);
+    }
+  });
 
-    return setIndex(item[Math.floor(Math.random() * item.length)])
-  
-}
- 
+  fetchReviews();
+  //   React.useEffect(() => {
+  //     fetch("/api/products")
+  //       //return a promise that we want to unpack it
 
-  React.useEffect(() => {
-    fetch("/api/products")
-      //return a promise that we want to unpack it
+  //       .then((res) => res.json())
 
-      .then((res) => res.json())
+  //       //return a promise that we want to unpack it
 
-      //return a promise that we want to unpack it
-
-      .then((data) =>
-        setReviews(
-          data.products.map((item) => {
-            return item.reviews;
-          })
-        )
-      );
-  }, []);
-
-reviews.forEach(item=>{
-    item.length>0?
-    
-    console.log("yhes"):
-    
-    
-    
-    console.log("not")})
-
-
-  
-    
- 
-  
-
+  //       .then((data) =>
+  //         setReviews(
+  //           data.products.map((item) => {
+  //             return item.reviews;
+  //           })
+  //         )
+  //       );
+  //   }, []);
 
   const reviewPart = reviews.map((item) => {
-  
-
     const itemRev = item?.map((rev) => {
-      
-
-
-      
-
-     
-    
-      const { reviewName, reviewCountry, reviewDetails} = rev;
-    
-    
-  
+      const { reviewName, reviewCountry, reviewDetails } = rev;
 
       return (
         <div>
@@ -85,16 +69,11 @@ reviews.forEach(item=>{
               </div>
             </div>
           </div>
-          <div className="w-full text-center"><button onClick={randomPerson} className="">
-            More Reviews
-          </button></div>
-          
         </div>
       );
     });
 
-    return (<div>{itemRev}
-    </div>);
+    return <div>{itemRev}</div>;
   });
 
   return (
@@ -106,6 +85,11 @@ reviews.forEach(item=>{
             Read trusted reviews from our customers
           </h3>
           <div>{reviewPart}</div>
+          <div className="w-full text-center">
+            <button onClick={randomNumberGenerator} className="bg-white border-2 p-4">
+              More Reviews
+            </button>
+          </div>
         </div>
       </div>
     </section>
