@@ -4,9 +4,10 @@ import { IoMdShare } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Paragraphs from "./Paragraphs";
 import ClearBtn from "./ClearBtn";
+import ProductBtn from "./ProductBtn";
 
 
-function ProductCard({img,title, price, category, description,children, childrenClass,imgClass,divClass}) {
+function ProductCard({img,title, price, category, description,children, childrenClass,imgClass,divClass,goTo,goToDetails}) {
   
  
  
@@ -21,30 +22,18 @@ function ProductCard({img,title, price, category, description,children, children
       <h3 className="mb-2  text-l uppercase my-4">
      {title}
     </h3>
-   
-      <Paragraphs className={`text-md text-justify `}>{description}</Paragraphs>
-      <p className={childrenClass}>{children}</p>
-      <hr  className="bg-black mt-6 "/>
+    <h6 className="font-bold">${price}.00</h6>
+   <Link to={goToDetails}> <Paragraphs className={`text-md text-justify `}>{description}</Paragraphs>
+      <p className={childrenClass}>{children}</p></Link>
+     
+      
      
    
    
     </div>
-    <ul className="product-actionbtns flex justify-around text-l gap-3 pt-4 mx-3 "> 
-      <li><h6 className="font-bold">${price}.00</h6></li>
-      <li>
-      <Link to="" className="flex items-center text-xl gap-2 font-bold  ">
-     <ClearBtn  > <LiaCartPlusSolid />
-     </ClearBtn>
-     
+    <Link to={goTo}><div className="pt-8"><ProductBtn/></div></Link>
     
-     </Link>
-      </li>
-      <li className={" text-xl hover:text-pink-500 hover:text-bold  "}> 
-        <IoMdShare/>
-      </li>
-     
-
-     </ul>
+   
       </div>
       
      

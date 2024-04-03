@@ -210,7 +210,7 @@ createServer({
         {
           id: '1',
           img: require ('./assets/website-imgs/products/7.png'),
-          title: ' 2 days Open heartchakra',
+          title: ' 2-day Opening Heart Chakra',
           description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
           price: 320,
           placesAvailable: 4,
@@ -231,7 +231,7 @@ createServer({
         server.create("workshop", {
             id: '2',
             img: require ('./assets/website-imgs/products/7.png'),
-            title: '4-days shamanic retreat',
+            title: '4-day shamanic retreat',
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
       
             price: 1220,
@@ -253,7 +253,7 @@ createServer({
           server.create("workshop", {
             id: '3',
             img: require ('./assets/website-imgs/products/7.png'),
-            title: ' 1 day Mindfull wellness',
+            title: ' 1 day on Mindfull wellness',
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
       
             price: 120,

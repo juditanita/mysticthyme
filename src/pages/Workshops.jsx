@@ -40,7 +40,7 @@ function Workshops() {
         
         </div>
         <div className='col-span-1  md:col-span-2'>
-          <ClearBtn classN={`bg-white mb-4 `}>Get Ticket</ClearBtn></div>
+          <ClearBtn classN={`bg-white mb-4 `}>Get Tickets</ClearBtn></div>
         
         
         

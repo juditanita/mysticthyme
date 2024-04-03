@@ -23,14 +23,15 @@ function ProductDetails() {
     <div className="product-details-container">
       {product ? (
         <div className="container">
-          <div className="pt-4 mx-6">
-            <BackToAllArrow>all Products</BackToAllArrow>
+          <div className="pt-4 px-6 container">
+            <BackToAllArrow linkGo={".."}>See All Products</BackToAllArrow>
           </div>
 
           <div className=" mx-6 my-12 md:text-left w-full">
             <ProductCard
               key={product.id}
               {...product}
+              goTo={"/cart"}
               imgClass={`w-auto product-img mx-auto md:mx-4`}
               divClass={`grid grid-cols-1 mx-auto w-2/3 md:w-4/5 md:gap-8 md:grid-cols-2 md:text-left `}
             />
@@ -41,7 +42,7 @@ function ProductDetails() {
              
               {product.reviewsArr ? (
                 product.reviewsArr.map((review) => {
-                  console.log(review)
+                 
                   return (
                    
                       <div class="mt-8 mx-auto w-3/4">

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function BackToAllArrow({children}) {
+function BackToAllArrow({children,linkGo}) {
   return (
     <div>
-    <Link to=".." className="">
-      &larr; <span>Back to {children}</span>
+    <Link to={linkGo} className="">
+      &larr; <span> {children}</span>
       </Link>
     </div>
   )

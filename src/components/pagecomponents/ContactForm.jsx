@@ -42,7 +42,7 @@ setErrorForMessage(false);
           We would love to hear from you
         </h3>
         <Paragraphs className={`px-6 text-sm sm:px-8 md:w-3/4 md:mx-auto`}>
-          Do you have any question on products or workshops?Fill out the form
+          Do you have any question on products or workshops? Fill out the form
           and we will get back to you within 48 hours.If you would like to
           Subscripe to be the first informed check the box below before you send
           us a your message.

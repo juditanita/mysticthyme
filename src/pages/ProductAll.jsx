@@ -31,7 +31,7 @@ function ProductAll() {
 
       return (
         <div className="product-card w-2/3 sm:w-1/2 md:w-4/6 rounded-md text-left col-span-1 flex flex-col overflow-hidden mx-auto mb-6">
-          <Link to={`/products/${item.id}`}>
+        
             <ProductCard
               key={id}
               img={img}
@@ -42,12 +42,14 @@ function ProductAll() {
               imgClass={`w-full product-img`}
               children ={"Read More..."}
               childrenClass={`float-right text-red-700`}
+              goToDetails={`/products/${item.id}`}
+              goTo={"/products/cart"}
             />
           
             <div className="flex flex-wrap justify-end pe-3 mt-auto pt-3 text-xs font-light">
               {singleTagEl}
             </div>
-          </Link>
+        
         </div>
       );
     }

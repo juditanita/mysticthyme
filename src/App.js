@@ -15,10 +15,12 @@ import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
 import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
+import Cart from "./pages/Cart.jsx"
 
 import HostWorkshopDetails from './Host/HostWorkshopDetails.jsx';
 import HostWorkshop from './Host/HostWorkshop.jsx';
 import HostReviews from './Host/HostReviews.jsx';
+import Checkout from './pages/Checkout.jsx';
 
 function App () {
   return (
@@ -35,11 +37,18 @@ function App () {
             <Route index element={<ProductAll />} />
 
             <Route path=":id" element={<ProductDetails />} />
+            <Route path="checkout" element={<Checkout/>}/>
+
+            <Route path="cart" element={<Cart/>}/>
+              
+           
+           
 
           </Route>
 
           <Route path="contact" element={<Contact />} />
           <Route path="workshops" element={<Workshop />} />
+          
         </Route>
 
         {/* host layout  */}
