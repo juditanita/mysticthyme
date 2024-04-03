@@ -18,7 +18,11 @@ const workshopEl=workshops.map(workshop=>{
   
   return(
     <Link to={`/host/workshops/${id}`}>
-      <WorkshopCard key={id} {...workshop} classN={`hidden`}/>
+      <WorkshopCard key={id} {...workshop} classN={`hidden`} children={<div> <button>edit</button>
+      <button>delete</button></div>}/>
+     
+      
+      
     
      
 

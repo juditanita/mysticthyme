@@ -8,11 +8,11 @@ import Contact from './pages/Contact';
 import Workshop from './pages/Workshops.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 
-import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import HostLayout from './Layout/HostLayout.jsx';
-import HostWorkshopInfo from './Host/HostWorkshopInfo.jsx';
-import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
-import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
+// import HostWorkshopInfo from './Host/HostWorkshopInfo.jsx';
+// import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
+// import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
 import Cart from "./pages/Cart.jsx"

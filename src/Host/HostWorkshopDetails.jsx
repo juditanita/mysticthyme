@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Outlet, NavLink } from "react-router-dom";
-import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
+
 
 function HostWorkshopDetails() {
   const activeStyles = {
@@ -25,7 +25,7 @@ function HostWorkshopDetails() {
         <section>
           {/* <BackToAllArrow linkGo={"."}>all workshops</BackToAllArrow> */}
           <div className="container">
-            <img src={currentWorkshop.img} />
+            <img src={currentWorkshop.img} alt={currentWorkshop.title}/>
             <h3>{currentWorkshop.title}</h3>
             <span>{currentWorkshop.price}</span>
             {/* there will be links and other navbar for the info photos etc so the navbar shared between all the links */}

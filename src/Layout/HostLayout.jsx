@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link,NavLink,Outlet } from 'react-router-dom'
+import { NavLink,Outlet } from 'react-router-dom'
 
 function HostLayout() {
   const className='py-2 w-2/5 text-center sm:w-auto sm:py-2 sm:px-4';

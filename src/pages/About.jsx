@@ -2,7 +2,7 @@ import React from "react";
 import Paragraphs from "../components/ShortComponets/Paragraphs";
 import { Link } from "react-router-dom";
 import BtnWithArroy from "../components/ShortComponets/BtnWithArroy";
-import Footer from "../components/Footer";
+
 import LogoHolder from "../components/LogoHolder";
 
 

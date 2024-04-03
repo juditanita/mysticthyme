@@ -3,7 +3,7 @@ import ClearBtn from "./ShortComponets/ClearBtn";
 
 
 function SectionSign() {
-  const[subscrib,setSubscibe]=React.useState(false);
+  const[subscribe,setSubscibe]=React.useState(false);
   const [signup,setSignUp]=React.useState({
     email:""}
   );

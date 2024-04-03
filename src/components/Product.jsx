@@ -1,7 +1,7 @@
 import React from "react";
 
 import ProductCard from "./ShortComponets/ProductCard.jsx";
-import { Link } from "react-router-dom";
+
 
 
 function Product() {
@@ -20,10 +20,7 @@ function Product() {
 
   const productElement = products.map((item) => {
     const { id, img, title, description, price, category, tags } = item;
-   
-   
-
-    if (item.available) {
+   if (item.available) {
       const singleTagEl = tags.map((singleTag, index) => {
         return (
           <p className="mr-2 mb-2 p-1 italic" key={index}>

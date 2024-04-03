@@ -1,6 +1,5 @@
 import React from "react";
-import { LiaCartPlusSolid } from "react-icons/lia";
-import { IoMdShare } from "react-icons/io";
+
 import { Link } from "react-router-dom";
 import Paragraphs from "./Paragraphs";
 import ClearBtn from "./ClearBtn";
