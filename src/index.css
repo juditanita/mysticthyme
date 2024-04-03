@@ -52,9 +52,21 @@ header{
   padding-bottom: -1rem;
 }
 
+ /* .faq-side:nth-child(odd){
+border-left:5px solid #f472b6;
+}
 
+.faq-side:nth-child(even){
+ border-left:5px solid 
+  }  */
 
-
+  @media screen and (max-width:600px){
+    .faq-side:nth-child(even),.faq-side:nth-child(odd){
+      border-right:none;
+      border-left: none;
+    }
+   
+  }
 .container
 {
   max-width: 100%;

@@ -310,7 +310,9 @@ createServer({
         return schema.workshops.find(id) 
 
     }) 
+   
 
+  
         this.get ('/host/workshops', (schema, request) => {
             return schema.workshops.where({hostId:"1234"});
           });

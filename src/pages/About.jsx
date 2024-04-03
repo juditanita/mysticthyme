@@ -47,8 +47,8 @@ function About() {
    
     </div>
     </section>
-    <LogoHolder  className={`hidden`} ></LogoHolder>
-    <Footer/>
+    <LogoHolder  ></LogoHolder>
+   
     </>
   );
 }
