@@ -41,6 +41,7 @@ function Product() {
               price={price}
               imgClass={`w-full product-img`}
               children ={"Read More..."}
+              categoryClass={category==="Herbs"?"bg-green-500":category==="Mushroom"?"bg-yellow-600":"bg-indigo-400 "}
               childrenClass={`float-right text-red-700`}
               goToDetails={`/products/${item.id}`}
               goTo={"/products/cart"}

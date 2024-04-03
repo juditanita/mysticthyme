@@ -32,6 +32,7 @@ function ProductDetails() {
               key={product.id}
               {...product}
               goTo={"/cart"}
+              categoryClass={product.category==="Herbs"?"bg-green-500":product.category==="Mushroom"?"bg-yellow-600":"bg-indigo-400 "}
               imgClass={`w-auto product-img mx-auto md:mx-4`}
               divClass={`grid grid-cols-1 mx-auto w-2/3 md:w-4/5 md:gap-8 md:grid-cols-2 md:text-left `}
             />
