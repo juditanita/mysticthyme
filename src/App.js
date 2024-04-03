@@ -9,7 +9,7 @@ import Workshop from './pages/Workshops.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 
 import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
-import HostLayout from './Host/HostLayout.jsx';
+import HostLayout from './Layout/HostLayout.jsx';
 import HostWorkshopInfo from './Host/HostWorkshopInfo.jsx';
 import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
 import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
@@ -37,9 +37,10 @@ function App () {
             <Route index element={<ProductAll />} />
 
             <Route path=":id" element={<ProductDetails />} />
-            <Route path="checkout" element={<Checkout/>}/>
+            
 
             <Route path="cart" element={<Cart/>}/>
+            <Route path="checkout" element={<Checkout/>}/>
               
            
            
@@ -51,25 +52,23 @@ function App () {
           
         </Route>
 
-        {/* host layout  */}
-        <Route path="host" element={<HostLayout />}>
+       
+        {/* ----host layout----- */}
+        <Route path="host" element={<HostLayout />}> 
 
-          <Route index element={<Dashboard />} />
-          <Route path="reviews" element={<HostReviews />} />
-          <Route path="income" element={<Income />} />
+            <Route index element={<Dashboard />} /> 
 
-          {/* <Route path="workshops" element={<HostWorkshop />} /> */}
-          <Route path="workshops" element={<Outlet />}>
-            <Route index element={<HostWorkshop />} />
-            <Route path=":id" element={<HostWorkshopDetails />} >
-            <Route index element={<HostWorkshopInfo />} />
+            <Route path="income" element={<Income />} /> 
 
-            <Route path="pricing" element={<HostWorkshopPricing />} />
+            <Route path="reviews" element={<HostReviews />} /> 
 
-            <Route path="photos" element={<HostWorkshopPhotos />} />
-</Route>
-          </Route>
-        </Route>
+            <Route path="workshops" element={<HostWorkshop />} /> 
+
+ 
+
+            <Route path="workshops/:id" element={<HostWorkshopDetails/>} /> 
+
+          </Route> 
       </Routes>
     </BrowserRouter>
   );

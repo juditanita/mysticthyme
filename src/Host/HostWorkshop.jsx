@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import WorkshopCard from '../components/ShortComponets/WorkshopCard';
 
 function HostWorkshop() {
   const [workshops, setWorkshops] = React.useState([]) ;
@@ -13,28 +14,47 @@ function HostWorkshop() {
 
 }, []) 
 const workshopEl=workshops.map(workshop=>{
-  const {id, img,title, description,placesAvailable,reviews,price}=workshop;
+  const {id}=workshop
+  
   return(
     <Link to={`/host/workshops/${id}`}>
-        <div key={id}>
-      <img src={img} alt={title}/>
-      <h3>{title}</h3>
-      <h6>{price}</h6>
-      <p>{description}</p>
-      <span>{placesAvailable}</span>
-      {reviews.map(rev=><p >{rev}</p>)}
+      <WorkshopCard key={id} {...workshop} classN={`hidden`}/>
+    
+     
 
-    </div></Link>
+   </Link>
 
-  )
-})
+  )})
   return (
     <section className='container'>
-      <h2>Your listed workshops</h2>
-    {
-    workshops&& {workshopEl}
-  }
-  </section>
+    <h1>Your listed workshops</h1>
+
+
+
+<div className=""> 
+
+    { 
+
+        workshops.length > 0 ? ( 
+
+            <section> 
+
+                {workshopEl} 
+
+            </section> 
+
+        ) : ( 
+
+                <h2>Loading...</h2> 
+
+            ) 
+
+    } 
+
+</div> 
+
+</section> 
+ 
     
   )
 }

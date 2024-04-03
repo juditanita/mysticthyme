@@ -23,7 +23,7 @@ function HostWorkshopDetails() {
     <>
       {currentWorkshop ? (
         <section>
-          <BackToAllArrow>all workshops</BackToAllArrow>
+          {/* <BackToAllArrow linkGo={"."}>all workshops</BackToAllArrow> */}
           <div className="container">
             <img src={currentWorkshop.img} />
             <h3>{currentWorkshop.title}</h3>
