@@ -21,16 +21,21 @@ import HostWorkshopDetails from './Host/HostWorkshopDetails.jsx';
 import HostWorkshop from './Host/HostWorkshop.jsx';
 import HostReviews from './Host/HostReviews.jsx';
 import Checkout from './pages/Checkout.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 function App () {
   return (
     <BrowserRouter>
 
       <Routes>
+      <Route path="*" element={<NotFound/>} />
         <Route path="/" element={<LayoutCustomers />}>
+        
           <Route index element={<Home />} />
 
           <Route path="about" element={<About />} />
+          <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<Checkout />} />
           {/* route for product */}
           <Route path="products">
 
@@ -38,8 +43,7 @@ function App () {
 
             <Route path=":id" element={<ProductDetails />} />
 
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
+            
 
           </Route>
 
@@ -57,21 +61,17 @@ function App () {
 
           <Route path="reviews" element={<HostReviews />} />
 
-          <Route path="workshops" element={<Outlet/>} >
-            <Route index element={<HostWorkshop/>}/>
+          <Route path="workshops" element={<Outlet />}>
+            <Route index element={<HostWorkshop />} />
 
-          <Route path=":id" element={<HostWorkshopDetails />} >
-<Route info element={<HostWorkshopInfo/>}/>
-<Route path="pricing" element={<HostWorkshopPricing/>}/>
-<Route path="photos" element={<HostWorkshopPhotos/>}/>
+            <Route path=":id" element={<HostWorkshopDetails />}>
+              <Route info element={<HostWorkshopInfo />} />
+              <Route path="pricing" element={<HostWorkshopPricing />} />
+              <Route path="photos" element={<HostWorkshopPhotos />} />
 
+            </Route>
           </Route>
-</Route>
         </Route>
-        
-
- 
-
 
       </Routes>
     </BrowserRouter>

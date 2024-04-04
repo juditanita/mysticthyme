@@ -14,6 +14,7 @@ import ContactForm from '../components/pagecomponents/ContactForm'
 
 import SectionSign from "../components/SectionSign"
 import Separator from "../components/Separator"
+import Button from '../components/Button'
 
 
 
@@ -34,17 +35,22 @@ function Home() {
     </div>
    
     <AboutShort/>
-   
-   <Link to="products">
-   <Banner childrenH1="Best Selling Products" childrenPar="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, facere. Lorem ipsum dolor sit amet consectetur"
-    childrenBtn="Shop Now"/>
-   </Link>
-   
     <div className='py-10'>
     <LogoHolder  className={`hidden`} >Chategories</LogoHolder>
     </div>
+    <div className=' text-center'>
     <Category/>
+      <Link to="products">
+       <Button className={`mb-2 mt-3  bg-black text-white w-1/6 mx-auto`}>
+          See All
+        </Button> 
+        </Link>
+    </div>
+
+  
+   
     
+   
     
  <div className=' my-14 sm:my-20'><Product/></div>
   <div id="shammanic" className='p-8'>
@@ -55,11 +61,7 @@ function Home() {
     childrenPar="Join our most unforgettable events and retreats and learn the ancient perspective to harmoniously connect with the world and self."/>   
     </Link>
     
-    <div className=''>
-    
-   
-   
-   </div>
+  
   
    </div>
  

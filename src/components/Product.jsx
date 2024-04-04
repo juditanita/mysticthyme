@@ -1,6 +1,8 @@
 import React from "react";
 
 import ProductCard from "./ShortComponets/ProductCard.jsx";
+import { Link } from "react-router-dom";
+import Banner from "./Banner.jsx";
 
 
 
@@ -58,8 +60,11 @@ function Product() {
 
  return(
   <section className="section container ">
-  <h2 className="text-2xl font-bold text-center pb-4 ">Products</h2>
-  <div></div>
+  
+  <Link to="products">
+   <Banner childrenH1="Best Selling Products" childrenPar="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, facere. Lorem ipsum dolor sit amet consectetur"
+    childrenBtn="Shop Now"/>
+   </Link>
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 p-3 mx-auto item-center mt-6">
     {productElement}
   </div>

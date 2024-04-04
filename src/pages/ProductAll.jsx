@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../components/ShortComponets/ProductCard";
-import { Link,useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
  
 
 
@@ -117,8 +117,18 @@ className={`text-white px-4 py-2 rounded-md ${categoryClass}`}
               categoryClass={category==="Herbs"?"bg-green-500":category==="Mushroom"?"bg-yellow-600":"bg-indigo-400 "}
               children ={"Read More..."}
               childrenClass={`float-right text-red-700`}
-              goToDetails={`/products/${item.id}`}
-              goTo={"/products/cart"}
+              goToDetails={item.id}
+              // state={{search:`?${searchParams.toString()}`}}
+              state={{  
+
+                search: `?${searchParams.toString()}`,  
+
+                category: categoryFilter  
+
+            }} 
+             
+             
+              goToCart={"/cart"}
             />
             
             <div className="flex flex-wrap justify-end pe-3  pt-3 mt-4 text-xs font-light">

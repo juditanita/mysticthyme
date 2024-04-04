@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 
 import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 import ProductCard from "../components/ShortComponets/ProductCard";
@@ -10,6 +10,11 @@ import ReviewCard from "../components/ShortComponets/ReviewCard";
 function ProductDetails() {
   const params = useParams();
   const [product, setProduct] = React.useState(null);
+  const location = useLocation() 
+  const search = location.state?.search || "" 
+  const category = location.state?.category || "" 
+
+  console.log(location) 
 
   React.useEffect(() => {
     fetch(`/api/products/${params.id}`)
@@ -24,14 +29,14 @@ function ProductDetails() {
       {product ? (
         <div className="container">
           <div className="pt-4 px-6 container">
-            <BackToAllArrow linkGo={".."}>See All Products</BackToAllArrow>
+            <BackToAllArrow linkGo={`..${search}`}  relWay={"path"}>Back to all {category}</BackToAllArrow>
           </div>
 
           <div className=" mx-6 my-12 md:text-left w-full">
             <ProductCard
               key={product.id}
               {...product}
-              goTo={"/cart"}
+              goToCart={"/cart"}
               categoryClass={product.category==="Herbs"?"bg-green-500":product.category==="Mushroom"?"bg-yellow-600":"bg-indigo-400 "}
               imgClass={`w-auto product-img mx-auto md:mx-4`}
               divClass={`grid grid-cols-1 mx-auto w-2/3 md:w-4/5 md:gap-8 md:grid-cols-2 md:text-left `}
