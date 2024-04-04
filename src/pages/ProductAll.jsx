@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "../components/ShortComponets/ProductCard";
 import { useSearchParams } from "react-router-dom";
+import { getProducts } from "../api";
  
 
 
@@ -19,17 +20,31 @@ function ProductAll() {
  
 
   
-  React.useEffect(() => {
-    fetch("/api/products")
-      //return a promise that we want to unpack it
+  // React.useEffect(() => {
+  //   fetch("/api/products")
+  //     //return a promise that we want to unpack it
 
-      .then((res) => res.json())
+  //     .then((res) => res.json())
 
-      //return a promise that we want to unpack it
+  //     //return a promise that we want to unpack it
 
-      .then((data) => setProducts(data.products));
-  }, []);
+  //     .then((data) => setProducts(data.products));
+  // }, []);
 
+
+  React.useEffect(() => { 
+
+    async function loadProducts() { 
+
+      const data = await getProducts(); 
+
+      setProducts(data); 
+
+    } 
+
+    loadProducts(); 
+
+  }, []); 
 
   const collectedCategory =displayedProducts.map(item=>item.category).flat();
   const allCategory= [...new Set(collectedCategory)];

@@ -29,7 +29,7 @@ function ProductDetails() {
       {product ? (
         <div className="container">
           <div className="pt-4 px-6 container">
-            <BackToAllArrow linkGo={`..${search}`}  relWay={"path"}>Back to all {category}</BackToAllArrow>
+            <BackToAllArrow linkGo={`..${search}`}  relWay={"path"}>See All {category}</BackToAllArrow>
           </div>
 
           <div className=" mx-6 my-12 md:text-left w-full">

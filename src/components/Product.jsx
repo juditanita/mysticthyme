@@ -3,22 +3,36 @@ import React from "react";
 import ProductCard from "./ShortComponets/ProductCard.jsx";
 import { Link } from "react-router-dom";
 import Banner from "./Banner.jsx";
+import { getProducts } from "../api";
 
 
 
 function Product() {
 
   const [products, setProducts] = React.useState([]);
-  React.useEffect(() => {
-    fetch("/api/products")
-      //return a promise that we want to unpack it
+  // React.useEffect(() => {
+  //   fetch("/api/products")
+  //     //return a promise that we want to unpack it
 
-      .then((res) => res.json())
+  //     .then((res) => res.json())
 
-      //return a promise that we want to unpack it
+  //     //return a promise that we want to unpack it
 
-      .then((data) => setProducts(data.products.slice(0,4)));
-  }, []);
+  //     .then((data) => setProducts(data.products.slice(0,4)));
+  // }, []);
+  React.useEffect(() => { 
+
+    async function loadProducts() { 
+
+      const data = await getProducts(); 
+
+      setProducts(data.slice(0,4)); 
+
+    } 
+
+    loadProducts(); 
+
+  }, []); 
 
   const productElement = products.map((item) => {
     const { id, img, title, description, price, category, tags } = item;

@@ -20,7 +20,7 @@ function Cart() {
        
        
          <div className="pt-4 px-6 container">
-            <BackToAllArrow linkGo={".."} >continue shopping</BackToAllArrow>
+            <BackToAllArrow linkGo={"/products"} >continue shopping</BackToAllArrow>
           </div>
       </div>
       <div id="summary" className=" w-full   sm:w-1/4   md:w-1/2     px-8 py-10">

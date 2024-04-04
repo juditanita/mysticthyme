@@ -41,8 +41,8 @@ function Home() {
     <div className=' text-center'>
     <Category/>
       <Link to="products">
-       <Button className={`mb-2 mt-3  bg-black text-white w-1/6 mx-auto`}>
-          See All
+       <Button className={`mb-2 mt-3  bg-black text-white w-3/6 mx-auto`}>
+          Go to Products
         </Button> 
         </Link>
     </div>
