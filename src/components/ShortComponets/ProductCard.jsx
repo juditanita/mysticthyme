@@ -32,7 +32,7 @@ function ProductCard({img,title, price, category, description,children, children
    
    
     </div>
-    <Link to={goTo}><div className="pt-8 mb-4"><ProductBtn/></div></Link>
+    <Link to={goTo}><div className="pt-8 mb-8 "><ProductBtn/></div></Link>
     
    
       </div>

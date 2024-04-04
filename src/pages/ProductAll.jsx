@@ -18,7 +18,7 @@ function ProductAll() {
 
  
 
-  console.log(categoryFilter)
+  
   React.useEffect(() => {
     fetch("/api/products")
       //return a promise that we want to unpack it
@@ -30,6 +30,62 @@ function ProductAll() {
       .then((data) => setProducts(data.products));
   }, []);
 
+
+  const collectedCategory =displayedProducts.map(item=>item.category).flat();
+  const allCategory= [...new Set(collectedCategory)];
+
+
+
+  function handleFilterChange(key, value) { 
+
+    setSearchParams((prevValue) => { 
+
+      if (value === null) { 
+
+        prevValue.delete(key); 
+
+      } else { 
+
+        prevValue.set(key, value); 
+
+      } 
+
+      return prevValue; 
+
+    }); 
+
+  } 
+
+  const categoryEl=allCategory.map(catItem=>{
+   
+ let categoryClass=""
+ if(catItem==="Herbs"){
+ 
+  categoryClass=` ${`bg-green-500`}`
+
+ }else if(catItem==="Mushroom"){
+  categoryClass=`${`bg-yellow-600`}`
+  
+ }else(
+  
+  categoryClass=` ${`bg-indigo-400`}`
+ )
+
+  
+    
+    
+    return(
+      <button  
+
+// onClick={() => setSearchParams({category: catItem})} 
+onClick={() => handleFilterChange("category", catItem)}
+
+className={`text-white px-4 py-2 rounded-md ${categoryClass}`}
+
+>{catItem}</button>
+    )
+  })
+  
   const productElement = displayedProducts.map((item) => {
     const { id, img, title, description, price, category, tags } = item;
    
@@ -79,40 +135,21 @@ function ProductAll() {
      
       <h1 className=" text-xl sm:text-2xl mt-10 font-bold text-center pb-4">Explore our Products </h1> 
 
-<div className="flex flex-col w-1/4 ml-4  sm:w-auto sm:mx-auto sm:flex-row text-center flex-wrap justify-center gap-4 mb-20 mt-10"> 
+<div className="flex   w-auto mx-auto s text-center flex-wrap justify-center gap-4 mb-20 mt-10"> 
+{categoryEl}
 
+{categoryFilter?(<button  
+
+    // onClick={() => setSearchParams({category: null})} 
+    onClick={() => handleFilterChange("category", null)}
     
-  <button  
+    className=" py-2 font-semibold text-black" 
+    
+    >Clear Filter</button>):null}
 
-onClick={() => setSearchParams({category: "Herbs"})} 
+  
+  
 
-className="bg-green-500 text-white px-4 py-2 rounded-md" 
-
->Herbs</button> 
-
-    <Link  
-
-        to="?category=Mushroom" 
-
-        className="bg-yellow-600 text-white px-4 py-2 rounded-md" 
-
-    >Mushroom</Link> 
-
-    <Link  
-
-        to="?category=Rituals" 
-
-        className="bg-indigo-400 text-white px-4 py-2 rounded-md" 
-
-    >Rituals</Link> 
-
-    <Link  
-
-        to="." 
-
-       className=" py-2 font-semibold text-black" 
-
-    >Clear Filters</Link> 
     </div>
       <div></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 p-3 mx-auto item-center mt-6">
