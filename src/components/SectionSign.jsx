@@ -3,13 +3,13 @@ import ClearBtn from "./ShortComponets/ClearBtn";
 
 
 function SectionSign() {
-  const[subscribe,setSubscibe]=React.useState(false);
+  // const[subscribe,setSubscibe]=React.useState(false);
   const [signup,setSignUp]=React.useState({
     email:""}
   );
 function handleSubmit(event){
   event.preventDefault();
-  setSubscibe(true);
+  //setSubscibe(true);
  
 }
 function handleChange(event){

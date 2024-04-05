@@ -79,9 +79,9 @@ function Footer() {
                 {" "}
                 Mystic Theme by
               </Link>
-              <a href="#" className="text-blueGray-500 hover:text-gray-800">
+              <Link to="/" className="text-blueGray-500 hover:text-gray-800">
                  {" "}Judit Szabo.
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,66 +1,74 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import WorkshopCard from '../components/ShortComponets/WorkshopCard';
+import React from "react";
+import { Link } from "react-router-dom";
+import WorkshopCard from "../components/ShortComponets/WorkshopCard";
+import { getHostWorkshops } from "../api";
+import Loading from "../components/ShortComponets/Loading";
 
 function HostWorkshop() {
-  const [workshops, setWorkshops] = React.useState([]) ;
-  React.useEffect(() => { 
+  const [workshops, setWorkshops] = React.useState([]);
+  const [error, setError] = React.useState(null);
 
-    fetch("/api/host/workshops") 
+  const [loading, setLoading] = React.useState(false);
 
-        .then(res => res.json()) 
+  React.useEffect(() => {
+    async function loadHostWorkshops() {
+      setLoading(true);
+      try {
+        const data = await getHostWorkshops();
 
-        .then(data => setWorkshops(data.workshops)) 
+        setWorkshops(data);
+      } catch (err) {
+        console.log(err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-}, []) 
-const workshopEl=workshops.map(workshop=>{
-  const {id}=workshop
-  
-  return(
-    <Link to={workshop.id}>
-      <WorkshopCard key={id} {...workshop} classN={`hidden`} children={<div> <button>edit</button>
-      <button>delete</button></div>}/>
-     
-      
-      
-    
-     
+    loadHostWorkshops();
+  }, []);
 
-   </Link>
+  if (loading) {
+    <Loading />;
+  }
 
-  )})
+  if (error) {
+    return (
+      <h1
+        className="text-center w-full text-3xl h-screen"
+        aria-live="assertive"
+      >
+        There was an error: {error.message}
+      </h1>
+    );
+  }
+  const workshopEl = workshops.map((workshop) => {
+    const { id } = workshop;
+
+    return (
+      <Link to={workshop.id}>
+        <WorkshopCard
+          key={id}
+          {...workshop}
+          classN={`hidden`}
+          children={
+            <div>
+              {" "}
+              <button>edit</button>
+              <button>delete</button>
+            </div>
+          }
+        />
+      </Link>
+    );
+  });
   return (
-    <section className='container'>
-    <h1>Your listed workshops</h1>
+    <section className="container">
+      <h1>Your listed workshops</h1>
 
-
-
-<div className=""> 
-
-    { 
-
-        workshops.length > 0 ? ( 
-
-            <section> 
-
-                {workshopEl} 
-
-            </section> 
-
-        ) : ( 
-
-                <h2>Loading...</h2> 
-
-            ) 
-
-    } 
-
-</div> 
-
-</section> 
- 
-    
-  )
+      <div className="">{workshops && <section>{workshopEl}</section>}</div>
+    </section>
+  );
 }
 
-export default HostWorkshop
+export default HostWorkshop;

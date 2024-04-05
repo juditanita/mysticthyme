@@ -2,6 +2,8 @@ import React from "react";
 import ProductCard from "../components/ShortComponets/ProductCard";
 import { useSearchParams } from "react-router-dom";
 import { getProducts } from "../api";
+import Loading from "../components/ShortComponets/Loading";
+import ErrorShort from "../components/ShortComponets/ErrorShort";
 
 function ProductAll() {
   const [products, setProducts] = React.useState([]);
@@ -62,7 +64,7 @@ function ProductAll() {
       <button
         // onClick={() => setSearchParams({category: catItem})}
         onClick={() => handleFilterChange("category", catItem)}
-        className={`text-white px-4 py-2 rounded-md ${categoryClass}`}
+        className={`text-white px-4 py-2 rounded-md hover:border-2 border-red-800 ${categoryClass}`}
       >
         {catItem}
       </button>
@@ -118,12 +120,12 @@ function ProductAll() {
     
   });
 
-  if (loading) {
-    return <h1 className="text-center w-full text-3xl h-screen" aria-live="polite">Loading...</h1>;
+  if(loading){
+    <Loading/>
   }
 
-  if (error) {
-    return <h1 className="text-center w-full text-3xl h-screen"aria-live="assertive">There was an error: {error.message}</h1>;
+  if(error){
+    <ErrorShort children={`There was an error: ${error.message}`}/>
   }
   return (
     <section className="section container ">
@@ -131,7 +133,7 @@ function ProductAll() {
         Explore our Products{" "}
       </h1>
 
-      <div className="flex   w-auto mx-auto s text-center flex-wrap justify-center gap-4 mb-20 mt-10">
+      <div className="flex w-auto mx-auto  text-center flex-wrap justify-center gap-4 mb-20 mt-10">
         {categoryEl}
 
         {categoryFilter ? (

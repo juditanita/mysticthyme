@@ -4,29 +4,59 @@ import { useParams,useLocation } from "react-router-dom";
 import BackToAllArrow from "../components/ShortComponets/BackToAllArrow";
 import ProductCard from "../components/ShortComponets/ProductCard";
 import ReviewCard from "../components/ShortComponets/ReviewCard";
+import { getProducts } from "../api";
+import Loading from "../components/ShortComponets/Loading"
+import ErrorShort from "../components/ShortComponets/ErrorShort";
 
 
 
 function ProductDetails() {
-  const params = useParams();
+  const {id} = useParams();
   const [product, setProduct] = React.useState(null);
   const location = useLocation() 
   const search = location.state?.search || "" 
   const category = location.state?.category || "" 
 
-  console.log(location) 
+   
+
+ const [error, setError] = React.useState(null); 
+
+ const [loading, setLoading] = React.useState(false); 
+
+
 
   React.useEffect(() => {
-    fetch(`/api/products/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data.products));
-  }, [params.id]);
+    async function loadProductsDetails(){
+      setLoading(true);
+      try{
+        const data= await getProducts(id)
+        setProduct(data)
+      }catch(err){
+        setError(err)
+      }finally{
+        setLoading(false)
+      }
+    }
+  loadProductsDetails()},[id])
+   
+
 
  
 
+  //stating
+
+  if(loading){
+    <Loading/>
+  }
+
+  if (error) {
+    <ErrorShort children={`There was an error: ${error.message}`} />;
+  }
+
   return (
     <div className="product-details-container">
-      {product ? (
+      {product &&
+      (
         <div className="container">
           <div className="pt-4 px-6 container">
             <BackToAllArrow linkGo={`..${search}`}  relWay={"path"}>See All {category}</BackToAllArrow>
@@ -58,15 +88,15 @@ function ProductDetails() {
                   
                   );
                 })
+
               ) : (
                 <p>No product reviews</p>
               )}
             </div>
           </div>
         </div>
-      ) : (
-        <div>Loading componet not ready yet</div>
-      )}
+      ) 
+      }
     </div>
   );
 }

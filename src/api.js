@@ -1,18 +1,66 @@
-export async function getProducts () {
-  const res = await fetch ('/api/products');
 
-  if (res.ok) {
-    const data = await res.json ();
-    return data.products;
-  } else {
-    throw new Error ('error');
+
+export async function getProducts(id) { 
+
+  const url = id ? `/api/products/${id}` : "/api/products"; 
+
+  const res = await fetch(url); 
+
+  if (res.ok) { 
+
+    const data = await res.json(); 
+
+    return data.products; 
+
+  } else { 
+
+    throw new Error("error"); 
+
+  } 
+
+} 
+
+
+export async function getWorkshops(id) { 
+
+  const url = id ? `/api/workshops/${id}` : "/api/workshops"; 
+
+  const res = await fetch(url); 
+
+  if (res.ok) { 
+
+    const data = await res.json(); 
+
+    return data.workshops; 
+
+  } else { 
+
+    throw new Error("error"); 
+
+  } 
+
+} 
+
+export async function getHostWorkshops(id) { 
+
+  const url = id ? `/api/host/workshops/${id}` : "/api/host/workshops"; 
+
+  const res = await fetch(url); 
+  if(res.ok){
+    const data = await res.json(); 
+
+    return data.workshops; 
   }
-}
+  else{
+  
+      throw new Error("error"); 
+      
+  }
 
 
-// export async function getProductDetails(){
-//     const resp=await fetch(`/api/products/${params.id}`)
-//     const data=await resp.json()
-//       return data.products
+ } 
 
-//   }
+ 
+
+
+

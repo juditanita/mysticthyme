@@ -3,9 +3,9 @@ import questions from "../faq.js"
 import Question from './ShortComponets/Questions.jsx';
 
 function FAQuestions() {
-   const [questionAll, setQuestionAll]=React.useState(questions);
+ 
 
-  
+ 
 
   return (
     <div className=' z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] '>
@@ -15,7 +15,7 @@ function FAQuestions() {
     <h3 className='text-center font-bold text-gray-800 text-2xl md:text-3xl mb-6'>FAQ on workshops</h3>
     <div className='px-6 w-11/12 mx-auto  py-6'>
       {
-      questionAll.map((question) => {
+      questions.map((question) => {
         return (
           <Question key={question.id} {...question}></Question>
         );

@@ -4,46 +4,49 @@ import ProductCard from "./ShortComponets/ProductCard.jsx";
 import { Link } from "react-router-dom";
 import Banner from "./Banner.jsx";
 import { getProducts } from "../api";
+import ErrorShort from "./ShortComponets/ErrorShort.jsx";
 
 
 
 function Product() {
 
   const [products, setProducts] = React.useState([]);
-  // React.useEffect(() => {
-  //   fetch("/api/products")
-  //     //return a promise that we want to unpack it
+  const [error, setError] = React.useState(null);
+  
 
-  //     .then((res) => res.json())
 
-  //     //return a promise that we want to unpack it
+  React.useEffect(() => {
+    async function loadProducts() {
 
-  //     .then((data) => setProducts(data.products.slice(0,4)));
-  // }, []);
-  React.useEffect(() => { 
+      try {
+        const data = await getProducts();
 
-    async function loadProducts() { 
+        setProducts(data.slice(0,4));
+      } catch (err) {
+        console.log(err);
+        setError(err);
+      }
+    }
 
-      const data = await getProducts(); 
+    loadProducts();
+  }, []);
 
-      setProducts(data.slice(0,4)); 
 
-    } 
+  if(error){
+    <ErrorShort children={`There was an error: ${error.message}`}/>
+  }
 
-    loadProducts(); 
-
-  }, []); 
-
-  const productElement = products.map((item) => {
+  //get only the available items then go through
+  const productElement = products.filter(item=>item.available).map((item) => {
     const { id, img, title, description, price, category, tags } = item;
-   if (item.available) {
+  
       const singleTagEl = tags.map((singleTag, index) => {
         return (
           <p className="mr-2 mb-2 p-1 italic" key={index}>
             #{singleTag}
           </p>
         );
-      });
+      }).flat();
 
       return (
         <div className="product-card w-2/3 sm:w-1/2 md:w-4/6 rounded-md text-left col-span-1 flex flex-col overflow-hidden mx-auto mb-6">
@@ -69,7 +72,7 @@ function Product() {
          
         </div>
       );
-    }
+    
   });
 
  return(

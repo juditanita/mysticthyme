@@ -1,7 +1,6 @@
 import React from "react";
 import Paragraphs from "./Paragraphs";
-import Button from "../Button";
-import { Link } from "react-router-dom";
+
 
 function CategoryCard({ catDescription, catImg, catTitle }) {
   let text = catDescription.split(" ",15);
