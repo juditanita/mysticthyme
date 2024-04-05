@@ -54,7 +54,7 @@ setErrorForMessage(false);
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-name"
+              for="grid-first-name"
             >
               Name
             </label>
@@ -80,7 +80,7 @@ setErrorForMessage(false);
             </label>
             <input
               className="appearance-none block w-full    rounded py-3 px-4 leading-tight "
-              id="grid-subject"
+              id="grid-email"
               type="email"
               placeholder="jane@gmail.co.uk"
               onChange={handleChange}

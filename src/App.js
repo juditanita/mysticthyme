@@ -22,6 +22,8 @@ import HostWorkshop from './Host/HostWorkshop.jsx';
 import HostReviews from './Host/HostReviews.jsx';
 import Checkout from './pages/Checkout.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Login from './components/Login.jsx';
+import AuthRequired from './components/AuthRequired.jsx';
 
 function App () {
   return (
@@ -34,6 +36,7 @@ function App () {
           <Route index element={<Home />} />
 
           <Route path="about" element={<About />} />
+          <Route path="login" element={<Login/>}/>
           <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
           {/* route for product */}
@@ -53,6 +56,7 @@ function App () {
         </Route>
 
         {/* ----host layout----- */}
+        <Route element={<AuthRequired/>}>
         <Route path="host" element={<HostLayout />}>
 
           <Route index element={<Dashboard />} />
@@ -71,6 +75,7 @@ function App () {
 
             </Route>
           </Route>
+        </Route>
         </Route>
 
       </Routes>

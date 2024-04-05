@@ -1,4 +1,5 @@
 import React from "react";
+import { FaRegUserCircle } from "react-icons/fa";
 
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
@@ -132,6 +133,10 @@ function Header() {
                 </li>
               );
             })}
+            <Link to="login">
+            <FaRegUserCircle className="ml-6 text-2xl mb-4 md:mb-0 hover:font-bold"/>
+            </Link>
+             
             <Button
               className={`mb-3 ml-2 hover:text-pink-800  bg-black text-white hover:bg-pink-200 md:ml-8  md:mt-0 font-bold md:mb-0 hidden sm:block`}
             >
@@ -148,6 +153,7 @@ function Header() {
 
               <IoSearchSharp className="text-xl" />
             </div>
+           
           </ul>
         </div>
       </header>
