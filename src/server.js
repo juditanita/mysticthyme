@@ -209,7 +209,7 @@ createServer({
         server.create("workshop", 
         {
           id: '1',
-          img: require ('./assets/website-imgs/products/7.png'),
+          img: require ('./assets/website-imgs/moodboardA.png'),
           title: ' 2-day Opening Heart Chakra',
           description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
           price: 320,
@@ -230,7 +230,7 @@ createServer({
         })
         server.create("workshop", {
             id: '2',
-            img: require ('./assets/website-imgs/products/7.png'),
+            img: require ('./assets/website-imgs/shammanic.png'),
             title: '4-day shamanic retreat',
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium',
       
