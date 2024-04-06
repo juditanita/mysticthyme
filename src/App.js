@@ -15,7 +15,7 @@ import HostWorkshopPhotos from './Host/HostWorkshopPhotos.jsx';
 import HostWorkshopPricing from './Host/HostWorkshopPricing.jsx';
 import Income from './Host/Income.jsx';
 import Dashboard from './Host/Dashboard.jsx';
-import Cart from './pages/Cart.jsx';
+// import Cart from './pages/Cart.jsx';
 
 import HostWorkshopDetails from './Host/HostWorkshopDetails.jsx';
 import HostWorkshop from './Host/HostWorkshop.jsx';
@@ -24,6 +24,7 @@ import Checkout from './pages/Checkout.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Login from './components/Login.jsx';
 import AuthRequired from './components/AuthRequired.jsx';
+import HostWorkshopPlaceA from './Host/HostWorkshopPlaceA.jsx';
 
 function App () {
   return (
@@ -37,7 +38,7 @@ function App () {
 
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>}/>
-          <Route path="cart" element={<Cart />} />
+          {/* <Route path="cart" element={<Cart />} /> */}
             <Route path="checkout" element={<Checkout />} />
           {/* route for product */}
           <Route path="products">
@@ -59,6 +60,7 @@ function App () {
         <Route element={<AuthRequired/>}>
         <Route path="host" element={<HostLayout />}>
 
+
           <Route index element={<Dashboard />} />
 
           <Route path="income" element={<Income />} />
@@ -69,8 +71,10 @@ function App () {
             <Route index element={<HostWorkshop />} />
 
             <Route path=":id" element={<HostWorkshopDetails />}>
-              <Route info element={<HostWorkshopInfo />} />
+              <Route index element={<HostWorkshopInfo />} />
+              
               <Route path="pricing" element={<HostWorkshopPricing />} />
+              <Route path="places" element={<HostWorkshopPlaceA/>}/>
               <Route path="photos" element={<HostWorkshopPhotos />} />
 
             </Route>

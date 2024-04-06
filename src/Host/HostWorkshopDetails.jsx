@@ -20,13 +20,7 @@ function HostWorkshopDetails() {
  const [loading, setLoading] = React.useState(false); 
   
 
-//    React.useEffect(() => {
-//     fetch(`/api/host/workshops/${id}`)
-//       .then((res) => res.json())
-//       .then((data) => setCurrentWorkshop(data.workshops));
-//  }, [id]);
 
-//not working error and loading showing not receiving in a function
    React.useEffect(() => {
     async function loadHWDetails(){
       setLoading(true);
@@ -54,7 +48,7 @@ function HostWorkshopDetails() {
      
         <section>
         {currentWorkshop && (
-          <div className="mx-4">
+          <div className="mx-4 mt-6">
             <div><BackToAllArrow linkGo={".."} relative="path" >
             all workshops
           </BackToAllArrow></div>
@@ -72,25 +66,20 @@ function HostWorkshopDetails() {
 
               <div className="md:col-span-2 flex justify-between w-11/12 ">
                 <div className=" items-start justify-start ">
-                  <h5 className="text-xl font-bold leading-3 text-gray-800 md:pt-0 pt-4">
-                    Available place left: {currentWorkshop.placesAvailable}
-                  </h5>
+               
                   <p className="text-2xl py-8 font-black leading-none text-gray-800">
-                    Title: {currentWorkshop.title}
+                     {currentWorkshop.title}
                   </p>
-                  {/* button is increase and decrease */}
-                  <p className="text-base leading-relaxed text-gray-600 pt-2 w-full">
-                    Description: {currentWorkshop.description}
-                  </p>
-                  <h4 className="text-red-800 pt-6">
-                    ${currentWorkshop.price}/price
-                  </h4>
+                
+                 
+                 
+               
                 </div>
               </div>
             </div>
-
+            
             {/* there will be links and other navbar for the info photos etc so the navbar shared between all the links */}
-            <nav className="flex justify-between mx-40">
+            <nav className="flex justify-between md:mx-40 mx-4 ">
               <NavLink
                 to="."
                 end
@@ -105,6 +94,7 @@ function HostWorkshopDetails() {
               >
                 Pricing
               </NavLink>
+              
 
               <NavLink
                 to="photos"
@@ -112,9 +102,19 @@ function HostWorkshopDetails() {
               >
                 Photos
               </NavLink>
+              <NavLink
+                to="places"
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+              >
+                Places
+              </NavLink>
             </nav>
+            <article className="bg-gray-200 rounded-md shadow-sm block mx-0 mt-6"> <Outlet context={{ currentWorkshop }} /></article>
+           
 
-            <Outlet context={{ currentWorkshop }} />
+          
+          
+
           </div>
          </div> )}
         </section>

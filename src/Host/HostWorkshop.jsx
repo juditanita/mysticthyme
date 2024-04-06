@@ -46,27 +46,23 @@ function HostWorkshop() {
     const { id } = workshop;
 
     return (
-      <Link to={workshop.id}>
+      <Link to={workshop.id} >
+       
         <WorkshopCard
           key={id}
           {...workshop}
           classN={`hidden`}
-          children={
-            <div>
-              {" "}
-              <button>edit</button>
-              <button>delete</button>
-            </div>
-          }
+        
         />
+       
       </Link>
     );
   });
   return (
-    <section className="container">
-      <h1>Your listed workshops</h1>
+    <section className="container ">
+      <h1 className="text-center my-8">Your listed workshops</h1>
 
-      <div className="">{workshops && <section>{workshopEl}</section>}</div>
+      <div>{workshops && <section className="container">{workshopEl}</section>}</div>
     </section>
   );
 }

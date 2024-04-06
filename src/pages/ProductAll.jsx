@@ -100,6 +100,7 @@ function ProductAll() {
                 ? "bg-yellow-600"
                 : "bg-indigo-400 "
             }
+            
             children={"Read More..."}
             childrenClass={`float-right text-red-700`}
             goToDetails={item.id}
@@ -110,6 +111,10 @@ function ProductAll() {
               category: categoryFilter,
             }}
             goToCart={"/cart"}
+            productCtaClass={"hover:bg-black"
+          
+        }
+            
           />
 
           <div className="flex flex-wrap justify-end pe-3  pt-3 mt-4 text-xs font-light">

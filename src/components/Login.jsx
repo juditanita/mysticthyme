@@ -74,9 +74,9 @@ location.state?.message &&
 					<input type="checkbox" id="remember" className="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500 focus:outline-none" checked/>
 					<label for="remember" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">Remember me</label>
 				</div> */}
-				<Link to="#"
+				{/* <Link to="#"
 					className="text-xs text-pink-800 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-800">Create
-					Account</Link>
+					Account</Link> */}
 			</div>
 			<button onClick={alert} type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-800 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">Login</button>
 		</form>
