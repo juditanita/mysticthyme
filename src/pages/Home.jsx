@@ -15,6 +15,7 @@ import ContactForm from '../components/pagecomponents/ContactForm'
 import SectionSign from "../components/SectionSign"
 import Separator from "../components/Separator"
 import Button from '../components/Button'
+import BtnWithArroy from '../components/ShortComponets/BtnWithArroy'
 
 
 
@@ -41,9 +42,7 @@ function Home() {
     <div className=' text-center'>
     <Category/>
       <Link to="products">
-       <Button className={`mb-2 mt-3  bg-black text-white w-3/6 mx-auto`}>
-          Go to Products
-        </Button> 
+      <div className=' flex justify-center'> <BtnWithArroy className={`md:hidden`  }>Go Shopping</BtnWithArroy></div> 
         </Link>
     </div>
 

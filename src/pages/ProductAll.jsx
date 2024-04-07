@@ -55,7 +55,7 @@ function ProductAll() {
   const categoryEl = allCategory.map((catItem) => {
     let categoryClass = "";
     if (catItem === "Herbs") {
-      categoryClass = ` ${`bg-green-500`}`;
+      categoryClass = ` ${`bg-green-500   `}`;
     } else if (catItem === "Mushroom") {
       categoryClass = `${`bg-yellow-600`}`;
     } else categoryClass = ` ${`bg-indigo-400`}`;
@@ -64,7 +64,7 @@ function ProductAll() {
       <button
         // onClick={() => setSearchParams({category: catItem})}
         onClick={() => handleFilterChange("category", catItem)}
-        className={`text-white px-4 py-2 rounded-md hover:border-2 border-red-800 ${categoryClass}`}
+        className={`text-white px-4 py-2 rounded-md  focus:outline-none tracking-wide uppercase focus:font-bold  focus:shadow-md    ${categoryClass}`}
       >
         {catItem}
       </button>
@@ -145,7 +145,7 @@ function ProductAll() {
           <button
             // onClick={() => setSearchParams({category: null})}
             onClick={() => handleFilterChange("category", null)}
-            className=" py-2 font-semibold text-black"
+            className=" py-2 font-semibold text-black focus:outline-none focus:font-bold focus:underline"
           >
             Clear Filter
           </button>
